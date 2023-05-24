@@ -94,6 +94,7 @@ const Navbar = () => {
     { link: "/Items", name: "Items" },
     { link: "/Types", name: "Types" },
     { link: "/Search", name: "Search" },
+    { link: "/Gacha", name: "Gacha" },
   ];
 
   const [open, setOpen] = useState(false);

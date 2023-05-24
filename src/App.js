@@ -8,11 +8,12 @@ import Pokedex from "./Pages/Pokedex"
 import Abilities from "./Pages/Abilities";
 import Items from "./Pages/Items"
 import Types from "./Pages/Types"
+import Gacha from "./Pages/Gacha"
 
 function App() {
   return (
-    <div>
-      <div className="">
+    <div id="background">
+      <div>
         <Navbar />
       </div>
       <div className="">
@@ -23,6 +24,7 @@ function App() {
           <Route path="/Abilities" element={<Abilities />} />
           <Route path="/Items" element={<Items />} />
           <Route path="/Types" element={<Types />} />
+          <Route path="/Gacha" element={<Gacha />} />
           <Route path="/Search" element={<Search />} />
         </Routes>
       </div>
