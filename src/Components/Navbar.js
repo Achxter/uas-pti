@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useMatch, useResolvedPath } from 'react-router-dom';
-import { BookOpenIcon, Bars3BottomRightIcon, XMarkIcon } from '@heroicons/react/24/solid'
+import { Bars3BottomRightIcon, XMarkIcon } from '@heroicons/react/24/solid'
 import './style.css';
 
 // function Navbar() {
@@ -116,7 +116,7 @@ const Navbar = () => {
 
   return (
     <div className="shadow-md w-full fixed top-0 left-0 z-0">
-      <div className="md:flex items-center justify-between bg-white py-4 md:px-10 px-7 z-1">
+      <div className="items-center justify-between bg-white py-4 md:px-10 px-7 z-1 flex">
         <div className="font-bold text-2xl cursor-pointer flex items-center gap-1 z-2">
           <span>Ascents&trade;</span>
         </div>
@@ -124,33 +124,33 @@ const Navbar = () => {
           onClick={toggleMenu}
           onMouseEnter={() => setHoverMenu(true)}
           onMouseLeave={() => setHoverMenu(false)}
-          className="absolute right-8 top-6 cursor-pointer md:hidden w-7 h-7 z-3"
+          className="absolute right-8 cursor-pointer md:hidden w-7 h-7 z-3"
         >
           {open ? <XMarkIcon /> : <Bars3BottomRightIcon />}
         </div>
-        <div className="md:flex items-center justify-between bg-white py-4 md:px-10 px-7 mx-auto z-4">
+        <div className="bg-white py-4 z-4 w-75">
           <ul
-            className={`md:flex md:items-center md:pb-0 pb-12 absolute md:static bg-white md:z-auto z-5 left-0 w-full md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in ${
-              open ? 'top-12' : 'top-[-490px]'
-            }`}
+            className={`md:flex md:justify-between md:items-center md:pb-0 pb-12 absolute md:static bg-white md:z-auto z-5 left-0 w-full md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in ${open ? 'top-12' : 'top-[-490px]'
+              }`}
           >
-            {Links.map((link, index) => (
-              <li
-                className="md:ml-8 md:my-0 my-7 z-6 font-semibold"
-                key={index}
-              >
-                <a
-                  href={link.link}
-                  className={`${
-                    windowWidth <= 768 && !hoverMenu ? '' : 'underline-hover'
-                  } z-8 text-gray-800 hover:text-blue-400 duration-500 relative inline-block`}
+            <div className='md:flex'>
+              {Links.map((link, index) => (
+                <li
+                  className="md:ml-6 md:my-0 my-7 z-6 font-semibold"
+                  key={index}
                 >
-                  {link.name}
-                </a>
-              </li>
-            ))}
-            <div className="md:flex flex justify-end transition-all duration-500 ease-in">
-              <button className="btn bg-blue-600 text-white font-semibold px-3 py-1 mr-4 rounded duration-600 mx-auto">
+                  <a
+                    href={link.link}
+                    className={`${windowWidth <= 768 && !hoverMenu ? '' : 'underline-hover'
+                      } z-8 text-gray-800 hover:text-blue-400 duration-500 relative inline-block`}
+                  >
+                    {link.name}
+                  </a>
+                </li>
+              ))}
+            </div>
+            <div className="md:flex md:ml-10 flex justify-end transition-all duration-500 ease-in">
+              <button className="btn bg-blue-600 text-white font-semibold px-3 py-1 rounded duration-600 mr-4 md:mr-0">
                 Get Started
               </button>
             </div>

@@ -12,7 +12,9 @@ import Types from "./Pages/Types"
 function App() {
   return (
     <div>
-      <Navbar />
+      <div className="">
+        <Navbar />
+      </div>
       <div className="">
         <Routes>
           <Route path="/" element={<Home />} />
