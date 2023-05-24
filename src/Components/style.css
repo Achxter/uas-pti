@@ -1,0 +1,37 @@
+.underline-hover {
+    text-decoration: none;
+    position: relative;
+    display: inline-block;
+  }
+  
+  .underline-hover::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      transform: scaleX(0);
+      height: 3.5px;
+      /* bottom: -150%; */
+      left: 0;
+      background-color: #65a5fa;
+      transform-origin: bottom right;
+      transition: transform 0.25s ease-out;
+    box-shadow: 0 2px 50px 1px #65a5fa;
+}
+
+.underline-hover:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+
+@media (max-width: 769px){
+    .underline-hover::after {
+      bottom: -150%;
+    }
+}
+
+@media (min-width: 769px){
+    .underline-hover::after {
+      bottom: -150%;
+    }
+}
