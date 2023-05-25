@@ -132,6 +132,7 @@ const Navbar = () => {
         <div className="bg-white py-4 z-4 w-75">
           <ul
             className={`md:flex md:justify-between md:items-center md:pb-0 pb-12 absolute md:static bg-white md:z-auto z-5 left-0 w-full md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in ${open ? 'top-12' : 'top-[-490px]'
+
             }`}
           >
             <div className="md:flex">

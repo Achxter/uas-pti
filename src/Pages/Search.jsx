@@ -37,6 +37,7 @@ const Search = () => {
     };
 
     return (
+
         <div id="background">
 
         <div className="mx-auto md:px-20 p-4 mt-28">

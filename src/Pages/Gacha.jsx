@@ -57,6 +57,7 @@ const GachaGame = () => {
         </div>
       )}
     </div>
+
       </div>
   );
 };

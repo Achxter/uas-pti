@@ -50,6 +50,7 @@ const Abilities = () => {
     };
 
     return (
+
         <div id="background">
 
         <div className="container mx-auto p-4 mt-24">

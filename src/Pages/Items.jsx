@@ -37,10 +37,12 @@ const Item = () => {
   };
 
   return (
+
     <div id="background" >
 
     <div className="container mx-auto p-4 mt-24">
       <Navbar />
+
       <h1 className="text-2xl font-bold mb-4">Search Items</h1>
       <form onSubmit={handleFormSubmit} className="mb-4">
         <input
