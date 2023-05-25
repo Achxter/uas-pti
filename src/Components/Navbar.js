@@ -48,7 +48,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="shadow-md w-full fixed top-0 left-0 z-3 bg-white/[.8]">
+    <div className="shadow-md w-full fixed top-0 left-0 z-40 bg-white">
       <div className="items-center justify-between py-4 md:px-10 px-7 z-1 flex">
         <div className="font-bold text-2xl cursor-pointer flex items-center gap-1 z-2">
           <Link to="/" className="logo text-black text-2xl font-bold flex items-center"><span>Ascents&trade;</span></Link>
@@ -61,27 +61,27 @@ const Navbar = () => {
         >
           {open ? <XMarkIcon /> : <Bars3BottomRightIcon />}
         </div>
-        <div className="py-4 z-4 w-75">
+        <div className="tolongplis py-4 z-30 w-75">
           <ul
-            className={`md:flex md:justify-between md:items-center md:pb-0 bg-white/[.8] md:bg-inherit pb-4 absolute md:static md:z-auto z-5 left-0 w-full md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in ${open ? 'top-12' : 'top-[-490px]'
+            className={`md:flex md:justify-between md:items-center md:pb-0 bg-gradient-to-b from-white to-white/[0.8] md:bg-inherit pb-4 absolute md:static md:z-auto z-5 left-0 w-full md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in ${open ? 'top-12' : 'top-[-490px]'
 
-            }`}
+              }`}
           >
             <div className="md:flex">
-            {Links.map((link, index) => (
-              <li
-              className="md:ml-6 md:my-0 my-7 z-6 font-semibold"
-              key={index}
-              >
-                <a
-                  href={link.link}
-                  className={`${windowWidth <= 768 && !hoverMenu ? '' : 'underline-hover'
-                  } z-8 text-gray-800 hover:text-blue-400 duration-500 relative inline-block`}
+              {Links.map((link, index) => (
+                <li
+                  className="md:ml-6 md:my-0 my-7 z-6 font-semibold"
+                  key={index}
+                >
+                  <a
+                    href={link.link}
+                    className={`${windowWidth <= 768 && !hoverMenu ? '' : 'underline-hover'
+                      } z-8 text-gray-800 hover:text-blue-400 duration-500 relative inline-block`}
                   >
-                  {link.name}
-                </a>
-              </li>
-            ))}
+                    {link.name}
+                  </a>
+                </li>
+              ))}
             </div>
             <div className="md:flex md:ml-10 flex justify-end transition-all duration-500 ease-in">
               <Link to="/About">

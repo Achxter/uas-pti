@@ -5,7 +5,7 @@ import malvin from '../img/malvin.jpg';
 import jackson from '../img/jack.jpg';
 import willsen from '../img/willsen.jpg';
 import Navbar from '../Components/Navbar';
-import "../index.css"
+import '../index.css';
 
 function About() {
   const Users = [
@@ -45,37 +45,90 @@ function About() {
 
   return (
     <div id="background">
-
-    <div className="container mx-auto mt-24 ps-4 py-8">
-      <Navbar />
-      <h1 className="text-3xl font-bold mb-8">About Us</h1>
-      <div className='flex justify-center'>
-        <div className="md:grid md:grid-cols-4 md:gap-16">
-          {Users.map(user => (
-            <div key={user.id} className="flip-card mt-4">
-              <div className="flip-card-inner">
-                <div className="flip-card-front">
-                  <img
-                    src={user.image}
-                    alt={user.name}
-                    className="user-image"
-                    />
-                  {/* <p className="user-name">{user.name}</p> */}
+      <div className="container mx-auto mt-24 ps-4 py-8">
+        <Navbar />
+        <div className="mt-8">
+          <div className='about flex justify-center'>
+            <h1 className="text-3xl font-bold mb-8 text-center-mobile">
+              About Us
+            </h1>
+          </div>
+          <div className="flex justify-center">
+            <div className="md:grid md:grid-cols-4 md:gap-24">
+              {Users.map(user => (
+                <div key={user.id} className="flip-card mt-4 flip-card-small">
+                  <div className="flip-card-inner">
+                    <div
+                      className="flip-card-front fixed"
+                    // style={{backgroundImage: `url(${user.image})`}}>
+                    >
+                      <img
+                        src={user.image}
+                        alt={user.name}
+                        className="user-image"
+                      />
+                      {/* <p className="user-name">{user.name}</p> */}
+                    </div>
+                    <div className="flip-card-back flex wrap">
+                      <p className="user-info">
+                        Name: {user.name}
+                        <br />
+                        NIM: {user.nim}
+                        <br />
+                        Instagram: <a href={user.ig}>{user.profile}</a>
+                      </p>
+                    </div>
+                  </div>
                 </div>
-                <div className="flip-card-back flex wrap">
-                  <p className="user-info">
-                    NIM: {user.nim}
-                    <br />
-                    Instagram: <a href={user.ig}>{user.profile}</a>
-                  </p>
-                </div>
-              </div>
+              ))}
             </div>
-          ))}
+          </div>
+          {/* <div className="text-white">
+            <br></br>
+            <p className="font-bold">References</p>
+            <p>Tailwind CSS</p>
+            <p>React JS</p>
+            <p>UIVerse</p>
+            <p>W3Schools</p>
+            <p>Hero Icons</p>
+            <p>PokeAPI</p>
+            <p>Google Fonts</p>
+            <p>YouTube</p>
+          </div> */}
+          <div className="atasin">
+            <div className='about flex justify-center'>
+              <h1 className="text-3xl font-bold mb-8 text-center-mobile">
+                References
+              </h1>
+            </div>
+            <div className="d-flex mt-5">
+              <img src="" className="bullet" alt="" />
+              <p className="mb-1">Bootstrap. Retrieved from <a className="hyper" href="https://getbootstrap.com">https://getbootstrap.com</a></p>
+            </div>
+            <div className="d-flex mt-5">
+              <img src="" className="bullet" alt="" />
+              <p className="mb-1">Musics. Retrieved from <a className="hyper" href="https://youtu.be/y9E0tfsZaOU">https://youtu.be/y9E0tfsZaOU</a></p>
+            </div>
+            <div className="d-flex mt-5">
+              <img src="" className="bullet" alt="" />
+              <p className="mb-1">Icons. Retrieved from <a className="hyper" href="https://freepik.com">https://freepik.com</a></p>
+            </div>
+            <div className="d-flex mt-5">
+              <img src="" className="bullet" alt="" />
+              <p className="mb-1">GIFs. Retrieved from <a className="hyper" href="https://tenor.com">https://tenor.com</a></p>
+            </div>
+            <div className="d-flex mt-5">
+              <img src="" className="bullet" alt="" />
+              <p className="mb-1">Font. Retrieved from <a className="hyper" href="https://fonts.google.com">https://fonts.google.com</a></p>
+            </div>
+            <div className="d-flex mt-5">
+              <img src="" className="bullet" alt="" />
+              <p className="mb-1">User Interfaced. Retrieved from <a className="hyper" href="https://uiverse.io">https://uiverse.io</a></p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-          </div>
   );
 }
 
