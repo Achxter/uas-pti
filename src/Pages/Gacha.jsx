@@ -35,30 +35,26 @@ const GachaGame = () => {
 
   return (
     <div id="background" >
-
-    <div className="container mx-auto p-4 mt-24">
-      <Navbar />
-      <h1 className="text-2xl font-bold mb-4">Gacha Game</h1>
-      <button
-        type="button"
-        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-        onClick={handleButtonClick}
-        disabled={loading}
-        >
-        {loading ? 'Fetching Pokémon...' : 'Click to Get a Pokémon'}
-      </button>
-
-      {error && <p className="text-red-500">{error}</p>}
-
-      {pokemon && (
-        <div className="mt-4">
-          <h2 className="text-xl font-bold mb-2">{pokemon.name}</h2>
-          <img src={pokemon.sprites.front_default} alt={pokemon.name} className="w-32 h-32" />
-        </div>
-      )}
-    </div>
-
+      <div className="container mx-auto p-4 mt-24">
+        <Navbar />
+        <h1 className="text-2xl font-bold mb-4">Gacha Game</h1>
+        <button
+          type="button"
+          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+          onClick={handleButtonClick}
+          disabled={loading}
+          >
+          {loading ? 'Fetching Pokémon...' : 'Click to Get a Pokémon'}
+        </button>
+        {error && <p className="text-red-500">{error}</p>}
+        {pokemon && (
+          <div className="mt-4">
+            <h2 className="text-xl font-bold mb-2">{pokemon.name}</h2>
+            <img src={pokemon.sprites.front_default} alt={pokemon.name} className="w-32 h-32" />
+          </div>
+        )}
       </div>
+    </div>
   );
 };
 

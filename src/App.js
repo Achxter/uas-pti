@@ -13,8 +13,6 @@ import Gacha from "./Pages/Gacha"
 function App() {
   return (
     <div>
-      {/* <NavBar /> */}
-      {/* <div id="background"> */}
         <div className="">
           <Routes>
             {/* <Home /> */}
@@ -29,7 +27,6 @@ function App() {
             <Route path="/Gacha" element={<Gacha />} />
           </Routes>
         </div>
-      {/* </div> */}
     </div>
   );
 }
