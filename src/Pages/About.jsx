@@ -45,37 +45,36 @@ function About() {
 
   return (
     <div id="background">
-
-    <div className="container mx-auto mt-24 ps-4 py-8">
-      <Navbar />
-      <h1 className="text-3xl font-bold mb-8">About Us</h1>
-      <div className='flex justify-center'>
-        <div className="md:grid md:grid-cols-4 md:gap-16">
-          {Users.map(user => (
-            <div key={user.id} className="flip-card mt-4">
-              <div className="flip-card-inner">
-                <div className="flip-card-front">
-                  <img
-                    src={user.image}
-                    alt={user.name}
-                    className="user-image"
+      <div className="container mx-auto mt-24 ps-4 py-8">
+        <Navbar />
+        <h1 className="text-3xl font-bold mb-8">About Us</h1>
+        <div className='flex justify-center'>
+          <div className="md:grid md:grid-cols-4 md:gap-16">
+            {Users.map(user => (
+              <div key={user.id} className="flip-card mt-4">
+                <div className="flip-card-inner">
+                  <div className="flip-card-front">
+                    <img
+                      src={user.image}
+                      alt={user.name}
+                      className="user-image"
                     />
-                  {/* <p className="user-name">{user.name}</p> */}
-                </div>
-                <div className="flip-card-back flex wrap">
-                  <p className="user-info">
-                    NIM: {user.nim}
-                    <br />
-                    Instagram: <a href={user.ig}>{user.profile}</a>
-                  </p>
+                    {/* <p className="user-name">{user.name}</p> */}
+                  </div>
+                  <div className="flip-card-back flex wrap">
+                    <p className="user-info">
+                      NIM: {user.nim}
+                      <br />
+                      Instagram: <a href={user.ig}>{user.profile}</a>
+                    </p>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </div>
-          </div>
   );
 }
 
