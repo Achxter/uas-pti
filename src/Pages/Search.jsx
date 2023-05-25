@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import Navbar from '../Components/Navbar';
+import "../index.css"
 
 const Search = () => {
     const [pokemonData, setPokemonData] = useState(null);
@@ -35,7 +37,10 @@ const Search = () => {
     };
 
     return (
-        <div className="container mx-auto p-4">
+        <div id="background">
+
+        <div className="mx-auto md:px-20 p-4 mt-28">
+            <Navbar />
             <h1 className="text-2xl font-bold mb-4">Search Pokémon by Name or ID</h1>
             <form onSubmit={handleFormSubmit} className="mb-4">
                 <input
@@ -44,27 +49,36 @@ const Search = () => {
                     value={pokemonInput}
                     onChange={handleInputChange}
                     className="border border-gray-300 rounded p-2 mr-2"
-                />
+                    />
                 <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded">
                     Search
                 </button>
-            </form>
             {showNoDataMessage && <p className="text-red-500">Oops.. No data found</p>}
             {pokemonData && (
-                <div className="border border-gray-300 rounded p-4 capitalize">
-                    <h2 className="text-xl font-bold mb-2">{pokemonData.name}</h2>
-                    <img src={pokemonData.sprites.front_default} alt={pokemonData.name} className="mb-2" />
-                    <p>
-                        <span className="font-bold">Type:</span> {pokemonData.types.map((type) => type.type.name).join(', ')}
-                    </p>
-                    <span className="font-bold">Stats:</span> {pokemonData.stats.map((stat) => <h3>{stat.stat.name} : {stat.base_stat}</h3>)}
-                    <p>
+                <div className="capitalize md:grid md:gap-4 md:grid-cols-7 md:flex md:items-center">
+                    <div className="card col-span-3">
+                        <div className="card-inner bg-black/[.6] p-4 rounded-md text-white">
+                            <h2 className="text-2xl font-bold">{pokemonData.name}</h2>
+                            <p>
+                                <span className="font-bold">Type:</span> {pokemonData.types.map((type) => type.type.name).join(', ')}
+                            </p>
+                            <div className="mt-2">
+                                {pokemonData.stats.map((stat) => <h3><span className='font-semibold'>{stat.stat.name}</span> : {stat.base_stat}</h3>)}
+                            </div>
+                        </div>
+                    </div>
+                    <img className="h-80 mt-2 mx-auto col-span-4" src={pokemonData.sprites.other.dream_world.front_default} alt={pokemonData.name} />
+                    {/* <span className="font-bold">Stats:</span>  */}
+                    {/* <p>
                         <span className="font-bold">Abilities:</span> {pokemonData.abilities.map((ability) => ability.ability.name).join(', ')}
-                    </p>
+                    </p> */}
                 </div>
             )}
+            </form>
         </div>
+            </div>
     );
 };
+
 
 export default Search;
