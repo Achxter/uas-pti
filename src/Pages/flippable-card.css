@@ -1,6 +1,16 @@
 .flippable-card-container {
-  /* === Sizing === */
+
   height: 500px;
   width: 300px;
   perspective: 1000px;
+  /* align-items: center;
+  display: flex; */
+  margin-left: 40%;
+}
+
+@media screen and (max-width: 768px){
+  .flippable-card-container {
+    margin-right: -100%;
+    padding: auto;
+  }
 }
