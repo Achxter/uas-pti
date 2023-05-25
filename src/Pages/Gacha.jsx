@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import Navbar from '../Components/Navbar';
+import "../index.css"
 
 const GachaGame = () => {
   const [pokemon, setPokemon] = useState(null);
@@ -32,14 +34,17 @@ const GachaGame = () => {
   };
 
   return (
+    <div id="background" >
+
     <div className="container mx-auto p-4 mt-24">
+      <Navbar />
       <h1 className="text-2xl font-bold mb-4">Gacha Game</h1>
       <button
         type="button"
         className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
         onClick={handleButtonClick}
         disabled={loading}
-      >
+        >
         {loading ? 'Fetching Pokémon...' : 'Click to Get a Pokémon'}
       </button>
 
@@ -52,6 +57,8 @@ const GachaGame = () => {
         </div>
       )}
     </div>
+
+      </div>
   );
 };
 

@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import Navbar from '../Components/Navbar';
+import "../index.css"
 
 const Search = () => {
     const [pokemonData, setPokemonData] = useState(null);
@@ -35,7 +37,11 @@ const Search = () => {
     };
 
     return (
+
+        <div id="background">
+
         <div className="mx-auto md:px-20 p-4 mt-28">
+            <Navbar />
             <h1 className="text-2xl font-bold mb-4">Search Pokémon by Name or ID</h1>
             <form onSubmit={handleFormSubmit} className="mb-4">
                 <input
@@ -44,7 +50,7 @@ const Search = () => {
                     value={pokemonInput}
                     onChange={handleInputChange}
                     className="border border-gray-300 rounded p-2 mr-2"
-                />
+                    />
                 <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded">
                     Search
                 </button>
@@ -71,7 +77,9 @@ const Search = () => {
             )}
             </form>
         </div>
+            </div>
     );
 };
+
 
 export default Search;

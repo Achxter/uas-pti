@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import Navbar from '../Components/Navbar';
+import "../index.css"
 
 const Item = () => {
   const [itemData, setItemData] = useState(null);
@@ -35,7 +37,12 @@ const Item = () => {
   };
 
   return (
+
+    <div id="background" >
+
     <div className="container mx-auto p-4 mt-24">
+      <Navbar />
+
       <h1 className="text-2xl font-bold mb-4">Search Items</h1>
       <form onSubmit={handleFormSubmit} className="mb-4">
         <input
@@ -44,7 +51,7 @@ const Item = () => {
           value={itemInput}
           onChange={handleInputChange}
           className="border border-gray-300 rounded p-2 mr-2"
-        />
+          />
         <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded">
           Search
         </button>
@@ -55,7 +62,7 @@ const Item = () => {
           <h2 className="text-xl font-bold mb-2">{itemData.name}</h2>
           {itemData.sprites.default && (
             <img src={itemData.sprites.default} alt={itemData.name} className="mb-2" />
-          )}
+            )}
           <p>
             <span className="font-bold">Category:</span> {itemData.category.name}
           </p>
@@ -75,6 +82,7 @@ const Item = () => {
         </div>
       )}
     </div>
+      </div>
   );
 };
 

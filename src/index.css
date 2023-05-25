@@ -14,25 +14,26 @@ body {
     monospace;
 } */
 
+
 .left-content {
-  grid-template-columns: repeat(autofit, minmax(200px, 0.5fr));
-}
-
-#background {
-  width: 100vw;
-  height: 100vh;
-  overflow-x: hidden;
-}
-
-#background::before {
-  content: '';
-  background: url('./background.png') 
-      no-repeat center center/cover;
-  position: fixed;
-  opacity: 0.3;
-  top: 0px;
-  left: 0px;
-  width: 100vw;
-  height: 100vh;
-  z-index: -1;
-}
+    grid-template-columns: repeat(autofit, minmax(200px, 0.5fr));
+  }
+  
+  #background {
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+  }
+  
+  #background::before {
+    content: '';
+    background: url('./background.png') 
+        no-repeat center center/cover;
+    position: fixed;
+    opacity: 0.3;
+    top: 0px;
+    left: 0px;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+  }

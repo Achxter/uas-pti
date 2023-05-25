@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import Navbar from '../Components/Navbar';
+import "../index.css"
 
 const PokeAPI = () => {
   const [type, setType] = useState('');
@@ -43,7 +45,10 @@ const PokeAPI = () => {
   };
 
   return (
+    <div id="background">
+
     <div className="container mx-auto p-4 mt-24">
+      <Navbar />
       <h1 className="text-2xl font-bold mb-4">Search Pokémon by Type</h1>
       <form onSubmit={handleSubmit}>
         {/* <label className="mr-2">Type:</label> */}
@@ -53,11 +58,11 @@ const PokeAPI = () => {
           placeholder="Enter Type ID or Name"
           value={type}
           onChange={handleTypeChange}
-        />
+          />
         <button
           type="submit"
           className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 ml-2 rounded"
-        >
+          >
           Search
         </button>
       </form>
@@ -72,12 +77,13 @@ const PokeAPI = () => {
               {pokemon.name}
               {pokemon.spriteUrl && (
                 <img src={pokemon.spriteUrl} alt={pokemon.name} className="ml-2 h-6" />
-              )}
+                )}
             </li>
           ))}
         </ul>
       )}
     </div>
+      </div>
   );
 };
 
