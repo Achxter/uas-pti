@@ -167,7 +167,7 @@ body {
   transition: none;
   animation: holoCard 12s ease 0s 1;
 
-  &:before {
+  /* &:before {
     transition: none;
     animation: holoGradient 12s ease 0s 1;
   }
@@ -175,10 +175,18 @@ body {
   &:after {
     transition: none;
     animation: holoSparkle 12s ease 0s 1;
-  }
+  } */
 }
 
+.karts.animated::before {
+  transition: none;
+  animation: holoGradient 12s ease 0s 1;
+}
 
+.karts.animated::after {
+  transition: none;
+  animation: holoSparkle 12s ease 0s 1;
+}
 
 @keyframes holoSparkle {
 

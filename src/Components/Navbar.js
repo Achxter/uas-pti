@@ -1,23 +1,23 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useMatch, useResolvedPath } from 'react-router-dom';
+import { Link /*, useMatch, useResolvedPath*/ } from 'react-router-dom';
 import { Bars3BottomRightIcon, XMarkIcon } from '@heroicons/react/24/solid'
 import './style.css';
 
-function CustomLink({ to, children }) {
-  const resolvedPath = useResolvedPath(to);
-  const isActive = useMatch({ path: resolvedPath.pathname, end: true });
+// function CustomLink({ to, children }) {
+//   const resolvedPath = useResolvedPath(to);
+//   const isActive = useMatch({ path: resolvedPath.pathname, end: true });
 
-  return (
-    <li className={isActive ? 'active' : ''}>
-      <Link
-        to={to}
-        className="side text-white hover:text-gray-300 font-medium"
-      >
-        {children}
-      </Link>
-    </li>
-  );
-}
+//   return (
+//     <li className={isActive ? 'active' : ''}>
+//       <Link
+//         to={to}
+//         className="side text-white hover:text-gray-300 font-medium"
+//       >
+//         {children}
+//       </Link>
+//     </li>
+//   );
+// }
 
 const Navbar = () => {
   let Links = [
