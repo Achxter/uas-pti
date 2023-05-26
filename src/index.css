@@ -24,6 +24,7 @@ body {
   width: 100vw;
   height: 100vh;
   overflow-x: hidden;
+
 }
 
 #background::before {
@@ -36,6 +37,11 @@ body {
   width: 100vw;
   height: 100vh;
   z-index: -1;
+  background-size: cover;
+  background-color: rgba(255, 255, 255, 0.15);
+  background-blend-mode: lighten;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .karts {
@@ -381,7 +387,7 @@ body {
 
 /* ScrollBar */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 8px;
 }
 
 ::-webkit-scrollbar-track {
@@ -402,4 +408,16 @@ body {
 ::-webkit-scrollbar-thumb:active {
   background: rgb(68, 68, 68);
   border-radius: 10px;
+}
+
+::-webkit-scrollbar {
+  height: 8px; /* Set the height of the scrollbar */
+}
+
+::-webkit-scrollbar-thumb {
+  height: 8px; /* Set the height of the thumb */
+}
+
+::-webkit-scrollbar-track {
+  height: 8px; /* Set the height of the track */
 }

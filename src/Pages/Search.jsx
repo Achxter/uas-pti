@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import Navbar from '../Components/Navbar';
 import "../index.css"
+import bg from "../img/dungeon.jpg"
 
 const Search = () => {
     const [pokemonData, setPokemonData] = useState(null);
@@ -40,87 +41,61 @@ const Search = () => {
         <div id="background">
             <div className="container mx-auto p-4 mt-16 md:mt-24">
                 <Navbar />
-                <div className="">
-                    <div className='bg-slate-100/[.8] rounded-md p-4'>
-                        <h1 className="text-2xl font-bold mb-4">Search Pokémon by Name or ID</h1>
-                        <form onSubmit={handleFormSubmit} className="">
-                            <input
-                                type="text"
-                                placeholder="Enter Pokémon name or ID"
-                                value={pokemonInput}
-                                onChange={handleInputChange}
-                                className="p-2 rounded text-center"
-                            />
-                            <button type="submit" className="bg-zinc-950 hover:bg-zinc-800 text-white px-4 py-2 ml-2 rounded">
-                                Search
-                            </button>
-                            <p className='mt-2 text-slate-600 text-sm'>*Use - instead of space. Type in lowercase*</p>
-                        </form>
+                <div className='bg-white/[.06] shadow-2xl backdrop-blur rounded-md p-4 flex justify-around md:h-48'>
+                    <div className="flex items-center">
+                        <div className=''>
+                            <h1 className="text-3xl mb-3 font-bold text-white text-center md:text-left">Search Your Pokémon</h1>
+                            <h4 className="text-base mb-4 text-white text-center md:text-left">You can search the pokemon by their name</h4>
+                            <form className='relative' onSubmit={handleFormSubmit}>
+                                <input
+                                    type="text"
+                                    className="py-2 px-6 rounded-3xl w-full"
+                                    placeholder="Enter ID/Keyword"
+                                    value={pokemonInput}
+                                    onChange={handleInputChange}
+                                />
+                                <button
+                                    type="submit"
+                                    className="absolute right-0 bg-blue-500 text-white hover:bg-white hover:text-blue-500 font-bold px-4 py-2 rounded-3xl"
+                                >
+                                    Search
+                                </button>
+                            </form>
+                            <p className='mt-2 text-sm text-white text-center md:text-left'>*Use '-' instead of &lt;space&gt;. Type in lowercase*</p>
+                        </div>
+                    </div>
+                    <div className='hidden lg:flex items-center'>
+                        <img className='h-40' src={bg} alt="" />
                     </div>
                 </div>
                 {showNoDataMessage && <p className="text-red-500">Oops.. No data found</p>}
                 {pokemonData && (
-                    <div className="capitalize md:grid md:gap-4 md:grid-cols-7 md:flex md:items-center">
-                        <div className="mt-4 col-span-3 h-full">
-                            <div className="card-inner h-full bg-black/[.6] p-4 rounded-md text-white flex flex-col justify-center items-center">
+                    <div className="mt-4 capitalize rounded-md md:flex justify-around bg-black/[.6] backdrop-blur-sm">
+                        <img
+                            className="h-80"
+                            src={pokemonData.sprites.other['official-artwork'].front_default}
+                            alt={pokemonData.name}
+                        />
+                        <div className="h-full flex my-auto">
+                            <div className="card-inner p-4 md:p-0 h-full text-white">
                                 <h2 className="text-2xl font-bold">{pokemonData.name}</h2>
                                 <p>
-                                    <span className="font-bold">Type:</span> {pokemonData.types.map((type) => type.type.name).join(', ')}
+                                    <span className="font-bold">Type:</span>{' '}
+                                    {pokemonData.types.map((type) => type.type.name).join(', ')}
                                 </p>
                                 <div className="mt-2">
-                                    {pokemonData.stats.map((stat) => <h3><span className='font-semibold'>{stat.stat.name}</span> : {stat.base_stat}</h3>)}
+                                    {pokemonData.stats.map((stat) => (
+                                        <h3>
+                                            <span className="font-semibold">{stat.stat.name}</span> : {stat.base_stat}
+                                        </h3>
+                                    ))}
                                 </div>
                             </div>
                         </div>
-                        <img className="h-80 mt-2 mx-auto col-span-4" src={pokemonData.sprites.other.dream_world.front_default} alt={pokemonData.name} />
-                        {/* <span className="font-bold">Stats:</span>  */}
-                        {/* <p>
-                        <span className="font-bold">Abilities:</span> {pokemonData.abilities.map((ability) => ability.ability.name).join(', ')}
-                    </p> */}
                     </div>
                 )}
-                {/* </form> */}
             </div>
         </div >
-        // <div id="background">
-        //     <div className="mx-auto md:px-20 p-4 mt-28">
-        //         <Navbar />
-        //         <h1 className="text-2xl font-bold mb-4">Search Pokémon by Name or ID</h1>
-        //         <form onSubmit={handleFormSubmit} className="mb-4">
-        //             <input
-        //                 type="text"
-        //                 placeholder="Enter Pokémon name or ID"
-        //                 value={pokemonInput}
-        //                 onChange={handleInputChange}
-        //                 className="border border-gray-300 rounded p-2 mr-2"
-        //             />
-        //             <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded">
-        //                 Search
-        //             </button>
-        //             {showNoDataMessage && <p className="text-red-500">Oops.. No data found</p>}
-        //             {pokemonData && (
-        //                 <div className="capitalize md:grid md:gap-4 md:grid-cols-7 md:flex md:items-center">
-        //                     <div className="card col-span-3">
-        //                         <div className="card-inner bg-black/[.6] p-4 rounded-md text-white">
-        //                             <h2 className="text-2xl font-bold">{pokemonData.name}</h2>
-        //                             <p>
-        //                                 <span className="font-bold">Type:</span> {pokemonData.types.map((type) => type.type.name).join(', ')}
-        //                             </p>
-        //                             <div className="mt-2">
-        //                                 {pokemonData.stats.map((stat) => <h3><span className='font-semibold'>{stat.stat.name}</span> : {stat.base_stat}</h3>)}
-        //                             </div>
-        //                         </div>
-        //                     </div>
-        //                     <img className="h-80 mt-2 mx-auto col-span-4" src={pokemonData.sprites.other.dream_world.front_default} alt={pokemonData.name} />
-        //                     {/* <span className="font-bold">Stats:</span>  */}
-        //                     {/* <p>
-        //                 <span className="font-bold">Abilities:</span> {pokemonData.abilities.map((ability) => ability.ability.name).join(', ')}
-        //             </p> */}
-        //                 </div>
-        //             )}
-        //         </form>
-        //     </div>
-        // </div>
     );
 };
 

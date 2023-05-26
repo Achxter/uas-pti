@@ -1,4 +1,5 @@
 import React from 'react'
+import styles from "./SmallCard.module.css";
 
 const Card = ({ pokemon, loading, infoPokemon }) => {
     return (
@@ -6,13 +7,36 @@ const Card = ({ pokemon, loading, infoPokemon }) => {
             {
                 loading ? <h1>Loading</h1> : pokemon.map((item) => {
                     return (
-                        <>
-                            <div key={item.id} onClick={() => infoPokemon(item)} className="bg-cyan-300 rounded-2xl p-6 flex items-center justify-between box-border capitalize">
-                                <h2>{item.id}</h2>
+                        <div className=''>
+                            <div key={item.id} onClick={() => infoPokemon(item)} className={`${styles["float-shadow"]} h-60 w-48 mt-8 rounded-3xl p-2 bg-grayTheme shadow-2xl cursor-pointer`}>
+                                {/* <h2>{item.id}</h2>
                                 <img src={item.sprites.front_default} className='w-10' alt="" />
-                                <h2>{item.name}</h2>
+                                <h2>{item.name}</h2> */}
+                                <div className="h-full w-full ">
+                                    <div className="w-full h-3/5 flex items-center justify-center">
+                                        <img
+                                            className=" h-full"
+                                            src={item.sprites.front_default}
+                                            alt={item.name}
+                                            draggable="false"
+                                        ></img>
+                                    </div>
+
+                                    <div className="h-2/5 px-3 text-sm">
+                                       
+                                        <div className="h-1/6 w-full "></div>
+
+                                        <div>
+                                            <h2 className="text-lg capitalize font-bold">{item.name}</h2>
+                                        </div>
+
+                                        <div className=" flex justify-between">
+                                            <p className="text-sm text-purpleTheme">#00{item.id}</p>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                        </>
+                        </div>
                     )
                 })
             }

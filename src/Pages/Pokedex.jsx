@@ -47,35 +47,34 @@ const Main = () => {
   return (
     <>
       <div id="background">
-
-      <div className="m-auto pt-28 flex shadow-md">
-        <Navbar />
-        <div className="flex basis-1/2 grid gap-8">
-          <Card pokemon={pokeData} loading={loading} infoPokemon={poke => setPokeDex(poke)} />
-          <div className="btn-group text-white flex justify-around">
-            {prevUrl && (
-              <button
-              onClick={handlePrevClick}
-              className="m-1 py-1.5 px-0 bg-orange-400 w-1/2 rounded-2xl"
-              >
-                Previous
-              </button>
-            )}
-            {nextUrl && (
-              <button
-                onClick={handleNextClick}
-                className="m-1 py-1.5 px-0 bg-orange-400 w-1/2 rounded-2xl"
+        <div className="m-auto pt-28 flex shadow-md">
+          <Navbar />
+          <div className="flex basis-1/2 grid gap-8">
+            <Card pokemon={pokeData} loading={loading} infoPokemon={poke => setPokeDex(poke)} />
+            <div className="btn-group  text-white flex justify-around">
+              {prevUrl && (
+                <button
+                  onClick={handlePrevClick}
+                  className="m-1 py-1.5 px-0 bg-orange-400 w-1/2 rounded-2xl"
                 >
-                Next
-              </button>
-            )}
+                  Previous
+                </button>
+              )}
+              {nextUrl && (
+                <button
+                  onClick={handleNextClick}
+                  className="m-1 py-1.5 px-0 bg-orange-400 w-1/2 rounded-2xl"
+                >
+                  Next
+                </button>
+              )}
+            </div>
+          </div>
+          <div className="fixed right-2 md:right-4 w-1/2">
+            <Pokeinfo data={pokeDex} />
           </div>
         </div>
-        <div className="w-1/2">
-          <Pokeinfo data={pokeDex} />
-        </div>
       </div>
-            </div>
     </>
   );
 };

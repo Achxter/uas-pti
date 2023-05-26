@@ -5,12 +5,12 @@
   perspective: 1000px;
   /* align-items: center;
   display: flex; */
-  margin-left: 40%;
+  /* margin-left: 40%; */
 }
 
-@media screen and (max-width: 768px){
+/* @media screen and (max-width: 768px){
   .flippable-card-container {
     margin-right: -100%;
     padding: auto;
   }
-}
+} */
