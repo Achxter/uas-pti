@@ -63,7 +63,7 @@
   display: flex; */
 }
 
-.umnBulet{
+.umnBulet {
   position: absolute;
   top: 80%;
   width: 120%;
@@ -73,7 +73,7 @@
   margin-left: 5%;
 }
 
-.umn img{
+.umn img {
   position: relative;
   top: 0;
   width: 50%;
@@ -101,28 +101,6 @@
   font-weight: bold;
 }
 
-/* .flip-card-small {
-  width: 7rem;
-  height: 10rem;
-} */
-
-
-/* @media(max-width:768px) {
-  .flip-card {
-    width: 15rem;
-    height: 20rem;
-    margin-top: 30px;
-  }
-}
-
-@media (max-width: 768px) {
-
-  .text-center-mobile {
-    top: 0;
-    z-index: 1;
-  }
-} */
-
 /* References */
 .atasin {
   margin-top: 5%;
@@ -146,16 +124,10 @@
   color: orangered;
 }
 
-.about {
+/* .about {
   color: white;
-}
-
-/* .isi {
-	position: flex;
-	justify-content: center;
-	align-items: center;
-	z-index: 38;
 } */
+
 .isi {
   margin-right: 20%;
   margin-bottom: 5%;
