@@ -31,7 +31,7 @@ body{
     z-index: 100;
     width: 100%;
     height: calc(var(--index)*10);
-    background-image: url("./img/ground.png");
+    background-image: url("./img/ground.webp");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

@@ -130,7 +130,7 @@
 }
 
 .bullet {
-  content: url('../img/backward.png');
+  content: url('../img/backward.webp');
   width: 20px;
   height: 20px;
   /* margin-left: 10%; */

@@ -1,13 +1,13 @@
 import React from 'react';
 import './About.css';
-import hans from '../img/hans.jpg';
-import malvin from '../img/malvin.jpg';
-import jackson from '../img/jack.jpg';
-import willsen from '../img/willsen.jpg';
+import hans from '../img/hans.webp';
+import malvin from '../img/malvin.webp';
+import jackson from '../img/jack.webp';
+import willsen from '../img/willsen.webp';
 import Navbar from '../Components/Navbar';
 import '../index.css';
-import umn from "../img/UMN 1.png";
-import umnBulet from "../img/UMN bulet.png";
+import umn from "../img/UMN-1.webp";
+import umnBulet from "../img/UMN-bulet.webp";
 
 function About() {
   const Users = [

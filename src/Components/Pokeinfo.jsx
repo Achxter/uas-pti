@@ -1,6 +1,6 @@
 import React from 'react';
 import "./stylingPokedex.css";
-import bg from "../img/Background.png";
+import bg from "../img/Background.webp";
 
 const Pokeinfo = ({ data }) => {
     console.log(data);

@@ -6,7 +6,7 @@ import "../Pages/card/card.css";
 import "../Pages/card/flip-transition.css";
 import { CSSTransition } from 'react-transition-group';
 import "../Pages/flippable-card.css";
-import Pokecard from "../img/pokemon_card_backside_in_high_resolution_by_atomicmonkeytcg_dah43cy-pre.png";
+import Pokecard from "../img/pokemon_card_backside_in_high_resolution_by_atomicmonkeytcg_dah43cy-pre.webp";
 
 const GachaGame = () => {
   const [pokemon, setPokemon] = useState(null);

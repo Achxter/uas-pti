@@ -3,15 +3,13 @@ import gsap from 'gsap';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 import { Link/*, useMatch, useResolvedPath */} from 'react-router-dom';
 import "./Home.css";
-import layerBaseImage from "./img/layer-base.png";
-import layerMiddleImage from "./img/layer-middle.png";
-import layerFrontImage from "./img/layer-front.png";
-import pertama from "./img/1.png";
-import kedua from "./img/2.png";
-import ketiga from "./img/3.png";
-import dungeonImage from "./img/dungeon.jpg";
-// import mountain from "./img/mountain.png";
-// import NavBar from './Components/Navbar.js';
+import layerBaseImage from "./img/layer-base.webp";
+import layerMiddleImage from "./img/layer-middle.webp";
+import layerFrontImage from "./img/layer-front.webp";
+import pertama from "./img/1.webp";
+import kedua from "./img/2.webp";
+import ketiga from "./img/3.webp";
+import dungeonImage from "./img/dungeon.webp";
 
 gsap.registerPlugin(ScrollTrigger);
 function Home() {

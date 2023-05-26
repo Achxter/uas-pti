@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import Navbar from '../Components/Navbar';
 import "../index.css";
-import bg from "../img/dungeon.jpg"
+import bg from "../img/dungeon.webp"
 
 const Item = () => {
   const [itemData, setItemData] = useState(null);
