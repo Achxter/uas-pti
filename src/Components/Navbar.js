@@ -32,10 +32,14 @@ const Navbar = () => {
     setOpen(!open);
   };
 
-  const handleLinkClick = (link) => {
-    setOpen(false);
-    navigate(link);
-  };
+  const handleClick = () => {
+    navigate("/Pokedex")
+  }
+
+  // const handleLinkClick = (link) => {
+  //   setOpen(false);
+  //   navigate(link);
+  // };
 
   return (
     <div className="shadow-md w-full fixed top-0 left-0 z-40 bg-white">
@@ -63,9 +67,10 @@ const Navbar = () => {
                   className="md:ml-6 md:my-0 my-7 z-6 font-semibold"
                   key={index}
                 >
+                  {/* <button onClick={handleClick}>Navigation</button> */}
                   <a
                     href={link.link}
-                    onClick={() => handleLinkClick(link.link)}
+                    onClick={handleClick}
                     className={`${windowWidth <= 768 && !hoverMenu ? '' : 'underline-hover'
                       } z-8 text-gray-800 hover:text-blue-400 duration-500 relative inline-block`}
                   >
@@ -82,6 +87,7 @@ const Navbar = () => {
           </ul>
         </div>
       </div>
+        <button onClick={handleClick}>test button</button>
     </div>
   );
 };
