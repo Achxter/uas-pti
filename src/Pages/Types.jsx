@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import Navbar from '../Components/Navbar';
 import "../index.css"
+import bg from "../img/dungeon.jpg"
 
 const PokeAPI = () => {
   const [type, setType] = useState('');
@@ -53,31 +54,37 @@ const PokeAPI = () => {
 
   return (
     <div id="background">
-      <div className="container mx-auto p-4 mt-16 md:mt-24">
+      <div className="container mx-auto p-4 mt-16 md:mt-32">
         <Navbar />
-        <div className='flex justify-center'>
-          <div className='bg-slate-100/[.8] rounded-md p-4 flex flex-col items-center md:w-1/2'>
-            <h1 className="text-2xl font-bold mb-4 text-center">Search Pokémon by Type</h1>
-            <form onSubmit={handleSubmit}>
-              <input
-                type="text"
-                className="p-2 rounded text-center"
-                placeholder="Enter Type ID or Name"
-                value={type}
-                onChange={handleTypeChange}
-              />
-              <button
-                type="submit"
-                className="bg-zinc-950 hover:bg-zinc-800 text-white px-4 py-2 ml-2 rounded"
-              >
-                Search
-              </button>
-              <p className='text-slate-600 text-center'>*Use - instead of space. Type in lowercase*</p>
-            </form>
+        <div className='bg-white/[.06] shadow-2xl backdrop-blur rounded-md p-4 flex justify-around md:h-96'>
+          <div className='flex items-center'>
+            <div className=''>
+              <h1 className="text-4xl mb-4 font-bold text-white text-center md:text-left">Search Pokémon by Type</h1>
+              <h4 className="text-lg mb-4 text-white text-center md:text-left">You can search the pokemon based on their types</h4>
+              <form className='relative md:w-3/4' onSubmit={handleSubmit}>
+                <input
+                  type="text"
+                  className="py-2 px-6 rounded-3xl w-full"
+                  placeholder="Enter ID/Keyword"
+                  value={type}
+                  onChange={handleTypeChange}
+                />
+                <button
+                  type="submit"
+                  className="absolute right-0 bg-blue-500 text-white hover:bg-white hover:text-blue-500 font-bold px-4 py-2 rounded-3xl"
+                >
+                  Search
+                </button>
+              </form>
+              <p className='mt-2 text-white text-center md:text-left'>*Use '-' instead of &lt;space&gt;. Type in lowercase*</p>
+            </div>
+          </div>
+          <div className='hidden lg:flex items-center'>
+            <img className='h-40' src={bg} alt="" />
           </div>
         </div>
         <div className='mt-2 flex justify-center'>
-          <ul className='flex flex-row gap-4 overflow-x-scroll md:w-1/2'>
+          <ul className='flex flex-row gap-4 overflow-x-scroll'>
             {
               types.map((item) => (
                 <li className='mb-2 px-4 py-2 bg-white rounded-full text-black'>

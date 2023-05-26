@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import Navbar from '../Components/Navbar';
 import "../index.css";
-import bag from "../img/backpack.png";
+import bg from "../img/dungeon.jpg"
 
 const Item = () => {
   const [itemData, setItemData] = useState(null);
@@ -40,27 +40,33 @@ const Item = () => {
 
   return (
     <div id="background" >
-      <div className="container mx-auto p-2 mt-16 md:mt-32 text-white">
+      <div className="container mx-auto p-4 mt-16 md:mt-32">
         <Navbar />
-        <div className='bg-black/[.6] p-4 rounded-md flex'>
-          <div className='hidden md:flex items-center mr-4 hover:scale-110 hover:rotate-1 ease-in duration-300'>
-            <img className='h-20' src={bag} alt="" />
+        <div className='bg-white/[.06] shadow-2xl backdrop-blur rounded-md p-4 flex justify-around md:h-96'>
+          <div className='flex items-center'>
+            <div>
+              <h1 className="text-4xl mb-4 font-bold text-white text-center md:text-left">Search All Items</h1>
+              <h4 className="text-lg mb-4 text-white text-center md:text-left">You can search all the in-game items here</h4>
+              <form className="relative" onSubmit={handleFormSubmit}>
+                <input
+                  type="text"
+                  className="py-2 px-6 rounded-3xl w-full"
+                  placeholder="Enter ID/Keyword"
+                  value={itemInput}
+                  onChange={handleInputChange}
+                />
+                <button
+                  type="submit"
+                  className="absolute right-0 bg-blue-500 text-white hover:bg-white hover:text-blue-500 font-bold px-4 py-2 rounded-3xl"
+                >
+                  Search
+                </button>
+              </form>
+              <p className='mt-2 text-white text-center md:text-left'>*Use '-' instead of &lt;space&gt;. Type in lowercase*</p>
+            </div>
           </div>
-          <div>
-            <h1 className="text-2xl font-bold mb-4">Search Items</h1>
-            <form onSubmit={handleFormSubmit} className="">
-              <input
-                type="text"
-                placeholder="Enter Item ID or Name"
-                value={itemInput}
-                onChange={handleInputChange}
-                className="rounded p-2 mr-2 md:mr-4 text-black"
-              />
-              <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded">
-                Search
-              </button>
-              <p className='text-white mt-2 text-sm'>*Use - instead of space. Type in lowercase*</p>
-            </form>
+          <div className='hidden lg:flex items-center'>
+            <img className='h-40' src={bg} alt="" />
           </div>
         </div>
         {showNoDataMessage && <p className="text-red-500">Oops.. No data found</p>}

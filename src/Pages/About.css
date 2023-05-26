@@ -1,10 +1,7 @@
 .flip-card {
   background-color: transparent;
-  /* width: 9rem;
-  height: 12rem; */
   perspective: 1000px;
   font-size: larger;
-  /* font-family: sans-serif; */
 }
 
 .title {
@@ -20,8 +17,10 @@
   height: 100%;
   text-align: center;
   transition: transform 0.9s;
+  animation: shimmy 6s ease-in-out infinite;
   transform-style: preserve-3d;
 }
+
 
 .flip-card:hover .flip-card-inner {
   transform: rotateY(180deg);
@@ -29,7 +28,8 @@
 
 .flip-card-front,
 .flip-card-back {
-  box-shadow: 0 8px 14px 0 rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  /* box-shadow: 0 8px 14px 0 rgba(0, 0, 0, 0.2); */
   position: absolute;
   display: flex;
   flex-direction: column;
@@ -38,7 +38,7 @@
   height: 100%;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
-  border: 1px solid rgb(128, 117, 117);
+  /* border: 1px solid rgb(128, 117, 117); */
   border-radius: 1rem;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -46,39 +46,68 @@
   /* font-size: 50px; */
 }
 
-.flip-card-front {
-  background: linear-gradient(120deg,
-      bisque 60%,
-      rgb(255, 231, 222) 88%,
-      rgb(255, 211, 195) 40%,
-      rgba(255, 127, 80, 0.603) 48%);
-  color: coral;
-}
-
 .flip-card-back {
-  background: rgb(2, 0, 36);
-  background: linear-gradient(90deg,
-      rgba(2, 0, 36, 1) 0%,
-      rgba(9, 9, 121, 1) 35%,
-      rgba(0, 212, 255, 1) 100%);
-  color: white;
+  background-color: rgb(223, 229, 231);
+  color: black;
   transform: rotateY(180deg);
 }
+
+.untukNama {
+  font-weight: bold;
+
+}
+
+.logoWEMEN {
+  position: relative;
+  /* align-items: center;
+  display: flex; */
+}
+
+.umnBulet{
+  position: absolute;
+  top: 80%;
+  width: 120%;
+  left: 0;
+  z-index: 0;
+  opacity: 20%;
+  margin-left: 5%;
+}
+
+.umn img{
+  position: relative;
+  top: 0;
+  width: 50%;
+  left: 25%;
+  cursor: pointer;
+  z-index: 2;
+}
+
 
 .user-image {
   height: 100%;
   border-radius: 1rem;
 }
 
-.flip-card-small {
-  width: 350px;
-  /* Sesuaikan dengan lebar yang Anda inginkan */
-  height: 500px;
-  /* Sesuaikan dengan tinggi yang Anda inginkan */
+.user-info {
+  font-size: medium;
+  z-index: 10;
 }
 
+.igNih:hover {
+  color: #014983;
+}
 
-@media(max-width:768px) {
+.igNiha {
+  font-weight: bold;
+}
+
+/* .flip-card-small {
+  width: 7rem;
+  height: 10rem;
+} */
+
+
+/* @media(max-width:768px) {
   .flip-card {
     width: 15rem;
     height: 20rem;
@@ -88,27 +117,24 @@
 
 @media (max-width: 768px) {
 
-  /* Ubah ukuran maksimum sesuai kebutuhan Anda */
   .text-center-mobile {
-    /* position: sticky; */
     top: 0;
     z-index: 1;
-    /* Pastikan elemen judul berada di atas elemen lain saat diskrol */
   }
-}
+} */
 
 /* References */
 .atasin {
   margin-top: 5%;
-  min-width: 100%;
+  /* min-width: 100%; */
 }
 
 .bullet {
   content: url('../img/backward.png');
   width: 20px;
   height: 20px;
-  margin-left: 10%;
-  margin-right: 5px;
+  /* margin-left: 10%; */
+  /* margin-right: 5px; */
   transform: scaleX(-1);
 }
 

@@ -1,23 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useMatch, useResolvedPath } from 'react-router-dom';
-import { Bars3BottomRightIcon, XMarkIcon } from '@heroicons/react/24/solid'
+import { Link, useNavigate } from 'react-router-dom';
+import { Bars3BottomRightIcon, XMarkIcon } from '@heroicons/react/24/solid';
 import './style.css';
-
-function CustomLink({ to, children }) {
-  const resolvedPath = useResolvedPath(to);
-  const isActive = useMatch({ path: resolvedPath.pathname, end: true });
-
-  return (
-    <li className={isActive ? 'active' : ''}>
-      <Link
-        to={to}
-        className="side text-white hover:text-gray-300 font-medium"
-      >
-        {children}
-      </Link>
-    </li>
-  );
-}
 
 const Navbar = () => {
   let Links = [
@@ -32,6 +16,7 @@ const Navbar = () => {
   const [open, setOpen] = useState(false);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [hoverMenu, setHoverMenu] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleResize = () => {
@@ -45,6 +30,16 @@ const Navbar = () => {
 
   const toggleMenu = () => {
     setOpen(!open);
+  };
+
+  const handleClick = (link) => {
+    setOpen(false);
+    navigate(link);
+  };
+
+  const handleAbout = () => {
+    setOpen(false);
+    navigate("/About");
   };
 
   return (
@@ -73,20 +68,20 @@ const Navbar = () => {
                   className="md:ml-6 md:my-0 my-7 z-6 font-semibold"
                   key={index}
                 >
-                  <a
-                    href={link.link}
+                  <button
+                    onClick={() => handleClick(link.link)}
                     className={`${windowWidth <= 768 && !hoverMenu ? '' : 'underline-hover'
                       } z-8 text-gray-800 hover:text-blue-400 duration-500 relative inline-block`}
                   >
                     {link.name}
-                  </a>
+                  </button>
                 </li>
               ))}
             </div>
             <div className="md:flex md:ml-10 flex justify-end transition-all duration-500 ease-in">
-              <Link to="/About">
-                <button className="btn bg-blue-600 text-white font-semibold px-3 py-1 mr-4 rounded duration-600 mx-auto md:mr-0">About Us</button>
-              </Link>
+              {/* <Link to="/About"> */}
+              <button onClick={handleAbout} className="btn bg-blue-600 text-white font-semibold px-3 py-1 mr-4 rounded duration-600 mx-auto md:mr-0">About Us</button>
+              {/* </Link> */}
             </div>
           </ul>
         </div>
