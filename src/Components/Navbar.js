@@ -37,6 +37,11 @@ const Navbar = () => {
     navigate(link);
   };
 
+  const handleAbout = () => {
+    setOpen(false);
+    navigate("/About");
+  };
+
   return (
     <div className="shadow-md w-full fixed top-0 left-0 z-40 bg-white">
       <div className="items-center justify-between py-4 md:px-10 px-7 z-1 flex">
@@ -74,9 +79,9 @@ const Navbar = () => {
               ))}
             </div>
             <div className="md:flex md:ml-10 flex justify-end transition-all duration-500 ease-in">
-              <Link to="/About">
-                <button className="btn bg-blue-600 text-white font-semibold px-3 py-1 mr-4 rounded duration-600 mx-auto md:mr-0">About Us</button>
-              </Link>
+              {/* <Link to="/About"> */}
+              <button onClick={handleAbout} className="btn bg-blue-600 text-white font-semibold px-3 py-1 mr-4 rounded duration-600 mx-auto md:mr-0">About Us</button>
+              {/* </Link> */}
             </div>
           </ul>
         </div>
