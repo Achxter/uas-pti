@@ -1,23 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Link /*, useMatch, useResolvedPath*/ } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Bars3BottomRightIcon, XMarkIcon } from '@heroicons/react/24/solid'
 import './style.css';
-
-// function CustomLink({ to, children }) {
-//   const resolvedPath = useResolvedPath(to);
-//   const isActive = useMatch({ path: resolvedPath.pathname, end: true });
-
-//   return (
-//     <li className={isActive ? 'active' : ''}>
-//       <Link
-//         to={to}
-//         className="side text-white hover:text-gray-300 font-medium"
-//       >
-//         {children}
-//       </Link>
-//     </li>
-//   );
-// }
 
 const Navbar = () => {
   let Links = [
@@ -32,6 +16,7 @@ const Navbar = () => {
   const [open, setOpen] = useState(false);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [hoverMenu, setHoverMenu] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleResize = () => {
@@ -45,6 +30,11 @@ const Navbar = () => {
 
   const toggleMenu = () => {
     setOpen(!open);
+  };
+
+  const handleLinkClick = (link) => {
+    setOpen(false);
+    navigate(link);
   };
 
   return (
@@ -75,6 +65,7 @@ const Navbar = () => {
                 >
                   <a
                     href={link.link}
+                    onClick={() => handleLinkClick(link.link)}
                     className={`${windowWidth <= 768 && !hoverMenu ? '' : 'underline-hover'
                       } z-8 text-gray-800 hover:text-blue-400 duration-500 relative inline-block`}
                   >
