@@ -71,10 +71,9 @@ function Home() {
                   </div>
                 </div>
                 <div className='m-article-content'>
-                  <h2 className="m-header text-base/7">Story To Be Continued</h2>
+                  <h2 className="m-header text-base/7">Ready to explore ?</h2>
                   <p className='m-paragraph text-center md:text-justify'>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                  </p>
+                  The Ascents&trade; website is a digital website created by the Ascent group which has a unique Pokemon concept in presenting complete information about Pokemon characters along with their strengths and abilities. This website pays great attention to website design to make it as attractive as possible to attract the attention of users, so as to provide a comfortable and responsive experience for every user. In addition, the website also provides games and activities related to the world of Pokemon, allowing users to test their knowledge, interact with their favorite characters, and play games such as Gacha Pokemon cards with unique characteristics. This website uses the Pokedex API to verify the accuracy and trustworthiness of the content from the website that is displayed. With maximum enthusiasm and effort in developing this website, the Ascent group hopes that this website will become a special place for every user as a Pokemon lover. Therefore, this website will become a bridge between users and Pokemon, and provide a memorable experience when playing and exploring Ascents&trade;.                  </p>
                 </div>
               <div className='copy'>
                 Ascents&trade;

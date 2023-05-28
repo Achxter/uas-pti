@@ -80,7 +80,7 @@ const Navbar = () => {
             </div>
             <div className="md:flex md:ml-10 flex justify-end transition-all duration-500 ease-in">
               {/* <Link to="/About"> */}
-              <button onClick={handleAbout} className="btn bg-blue-600 text-white font-semibold px-3 py-1 mr-4 rounded duration-600 mx-auto md:mr-0">About Us</button>
+              <button onClick={handleAbout} className="btn bg-blue-600 text-white font-semibold px-3 py-1 mr-4 rounded-md duration-600 mx-auto md:mr-0">About Us</button>
               {/* </Link> */}
             </div>
           </ul>

@@ -14,8 +14,8 @@ const Pokeinfo = ({ data }) => {
                             {data.id}
                         </p>
                         <div className='overlay'>
-                            <img className="gbrPoke" src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${data.id}.png`} alt={data.name}/>
-                            <img className="w-20" src={bg} alt="circle"/>
+                            <img className="circlet w-20" src={bg} alt="circle"/>
+                            <img className="gbrPoke ease-in-out duration-200" src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${data.id}.png`} alt={data.name}/>
                         </div>
                         <h2 className="poke-name capitalize">{data.name}</h2>
                         <div className="types">

@@ -8,7 +8,7 @@ import "../index.css"
 const Main = () => {
   const [pokeData, setPokeData] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [url, setUrl] = useState("https://pokeapi.co/api/v2/pokemon/");
+  const [url, setUrl] = useState("https://pokeapi.co/api/v2/pokemon?limit=6");
   const [nextUrl, setNextUrl] = useState();
   const [prevUrl, setPrevUrl] = useState();
   const [pokeDex, setPokeDex] = useState();
@@ -46,16 +46,22 @@ const Main = () => {
 
   return (
     <>
+      <Navbar />
       <div id="background">
-        <div className="m-auto pt-28 flex shadow-md">
-          <Navbar />
+        <div className="m-auto pt-20 flex mt-20 shadow-md">
           <div className="flex basis-1/2 grid gap-8">
             <Card pokemon={pokeData} loading={loading} infoPokemon={poke => setPokeDex(poke)} />
-            <div className="btn-group  text-white flex justify-around">
+          </div>
+          <div className="">
+            <div className='fixed right-2 md:right-4 w-1/2'>
+              <Pokeinfo data={pokeDex} />
+            </div>
+            {/* <div className="relative"> */}
+            <div className="btn-group absolute bottom-0 start-1/2 text-white flex justify-around">
               {prevUrl && (
                 <button
                   onClick={handlePrevClick}
-                  className="m-1 py-1.5 px-0 bg-orange-400 w-1/2 rounded-2xl"
+                  className="iniTombol mx-1 py-1.5 px-0 bg-orange-400 w-1/2 rounded-2xl"
                 >
                   Previous
                 </button>
@@ -63,15 +69,13 @@ const Main = () => {
               {nextUrl && (
                 <button
                   onClick={handleNextClick}
-                  className="m-1 py-1.5 px-0 bg-orange-400 w-1/2 rounded-2xl"
+                  className="iniTombol mx-1 py-1.5 px-0 bg-orange-400 w-1/2 rounded-2xl"
                 >
                   Next
                 </button>
               )}
             </div>
-          </div>
-          <div className="fixed right-2 md:right-4 w-1/2">
-            <Pokeinfo data={pokeDex} />
+            {/* </div> */}
           </div>
         </div>
       </div>

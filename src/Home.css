@@ -146,7 +146,7 @@ body{
 }
 
 .m-paragraph{
-    max-width: calc(var(--index)*30);
+    max-width: calc(var(--index)*45);
     font-size: calc(var(--index)*0.9);
     margin-top: calc(var(--index)/1.25);
     transform: var(--mainarticle-transform);
@@ -562,7 +562,7 @@ body{
     }
     .m-paragraph{
         font-size: 9px;
-        max-width: 90%;
+        max-width: 150%;
         padding-left: 20px;
         padding-right: 20px;
         margin: auto;

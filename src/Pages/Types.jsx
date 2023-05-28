@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import Navbar from '../Components/Navbar';
-import "../index.css"
-import bg from "../img/dungeon.webp"
+import "../index.css";
+import tipe from "../img/element.webp";
 
 const PokeAPI = () => {
   const [type, setType] = useState('');
@@ -15,14 +15,14 @@ const PokeAPI = () => {
     'rock', 'bug', 'ghost', 'steel', 'fire', 'water',
     'grass', 'electric', 'psychic', 'ice', 'dragon',
     'dark', 'fairy', 'unknown', 'shadow'
-  ]
+  ];
 
-  const fetchPokemonByType = async () => {
+  const fetchPokemonByType = async (selectedType) => {
     try {
       setLoading(true);
       setError('');
 
-      const response = await axios.get(`https://pokeapi.co/api/v2/type/${type}`);
+      const response = await axios.get(`https://pokeapi.co/api/v2/type/${selectedType}`);
       const updatedPokemonList = await Promise.all(
         response.data.pokemon.map(async (pokemon) => {
           const pokemonResponse = await axios.get(pokemon.pokemon.url);
@@ -33,7 +33,6 @@ const PokeAPI = () => {
         })
       );
       setPokemonList(updatedPokemonList);
-      //   console.log(response.data);
     } catch (error) {
       console.error(error);
       setPokemonList([]);
@@ -43,13 +42,17 @@ const PokeAPI = () => {
     }
   };
 
-  const handleTypeChange = (event) => {
-    setType(event.target.value);
+  const handleTypeChange = async (event, selectedType) => {
+    setPokemonList([]);
+    event.preventDefault();
+    setType(selectedType);
+    await fetchPokemonByType(selectedType);
   };
 
   const handleSubmit = (event) => {
+    setPokemonList([]);
     event.preventDefault();
-    fetchPokemonByType();
+    fetchPokemonByType(type);
   };
 
   return (
@@ -67,7 +70,7 @@ const PokeAPI = () => {
                   className="py-2 px-6 rounded-3xl w-full"
                   placeholder="Enter ID/Keyword"
                   value={type}
-                  onChange={handleTypeChange}
+                  onChange={(event) => setType(event.target.value)}
                 />
                 <button
                   type="submit"
@@ -80,74 +83,41 @@ const PokeAPI = () => {
             </div>
           </div>
           <div className='hidden lg:flex items-center'>
-            <img className='h-40' src={bg} alt="" />
+            <img className='h-60' src={tipe} alt="" />
           </div>
         </div>
         <div className='mt-2 flex justify-center'>
           <ul className='flex flex-row gap-4 overflow-x-scroll'>
-            {
-              types.map((item) => (
-                <li className='mb-2 px-4 py-2 bg-white rounded-full text-black'>
-                  {item}
-                </li>
-              ))
-            }
+            {types.map((item) => (
+              <li
+                className='mb-2 px-4 py-2 hover:bg-white rounded-full font-bold hover:text-blue-500 cursor-pointer text-white bg-blue-500'
+                onClick={(event) => handleTypeChange(event, item)}
+                key={item}
+              >
+                {item}
+              </li>
+            ))}
           </ul>
         </div>
-        {loading && <p>Loading...</p>}
-        {error && <p className="text-red-500">{error}</p>}
+        {loading && <p className='mt-8 text-4xl text-white text-center'>Loading...</p>}
+        {error && <p className="text-white text-2xl text-center">{error}</p>}
         {pokemonList.length > 0 && (
-          <ul className="mt-4 sm:grid md:grid sm:grid-cols-3 lg:grid-cols-5 gap-4 px-8">
+          <ul className="mt-5 sm:grid md:grid sm:grid-cols-3 lg:grid-cols-5 gap-4 px-18">
             {pokemonList.map((pokemon) => (
-              <li className='flex bg-slate-100 rounded-md capitalize items-center mt-4' key={pokemon.name}>
+              <li className='flex bg-slate-100 rounded-xl mt-8 capitalize items-center py-4 px-8 mt-4' key={pokemon.name}>
                 {pokemon.spriteUrl && (
-                  <img className="ml-2 h-20" src={pokemon.spriteUrl} alt={pokemon.name} />
+                  <img className="ml-2 h-25 " src={pokemon.spriteUrl} alt={pokemon.name} />
                 )}
-                <p className="text-lg mx-auto">{pokemon.name}</p>
+                <div className="px-3">
+                  <p className="text-xl mx-auto font-medium">{pokemon.name}</p>
+                  <p className="text-md mx-auto">#00{pokemon.id}</p>
+                </div>
               </li>
             ))}
           </ul>
         )}
       </div>
     </div>
-    // <div id="background">
-    //   <div className="container mx-auto p-4 mt-24">
-    //     <Navbar />
-    //     <h1 className="text-2xl font-bold mb-4">Search Pokémon by Type</h1>
-    //     <form onSubmit={handleSubmit}>
-    //       {/* <label className="mr-2">Type:</label> */}
-    //       <input
-    //         type="text"
-    //         className="border border-gray-400 px-2 py-1 rounded"
-    //         placeholder="Enter Type ID or Name"
-    //         value={type}
-    //         onChange={handleTypeChange}
-    //       />
-    //       <button
-    //         type="submit"
-    //         className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 ml-2 rounded"
-    //       >
-    //         Search
-    //       </button>
-    //     </form>
-
-    //     {loading && <p>Loading...</p>}
-    //     {error && <p className="text-red-500">{error}</p>}
-
-    //     {pokemonList.length > 0 && (
-    //       <ul className="mt-4">
-    //         {pokemonList.map((pokemon) => (
-    //           <li className='flex' key={pokemon.name}>
-    //             {pokemon.name}
-    //             {pokemon.spriteUrl && (
-    //               <img src={pokemon.spriteUrl} alt={pokemon.name} className="ml-2 h-6" />
-    //             )}
-    //           </li>
-    //         ))}
-    //       </ul>
-    //     )}
-    //   </div>
-    // </div>
   );
 };
 

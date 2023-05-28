@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import Navbar from '../Components/Navbar';
 import "../index.css";
-import bg from "../img/dungeon.webp"
+import rame from "../img/rame.webp";
 
 const Abilities = () => {
     const [ability, setAbility] = useState('');
@@ -78,7 +78,7 @@ const Abilities = () => {
                         </div>
                     </div>
                     <div className='hidden lg:flex items-center'>
-                        <img className='h-40' src={bg} alt="" />
+                        <img className='gbrRame h-80' src={rame} alt="" />
                     </div>
                 </div>
                 {loading && <p>Loading...</p>}

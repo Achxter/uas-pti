@@ -122,7 +122,7 @@ function About() {
               </div>
             </div>
             <div className="atasin">
-              <div className='about flex justify-center'>
+              <div className='about flex justify-center mt-40'>
                 <h1 className="text-3xl font-bold mb-4 text-center-mobile">
                   References
                 </h1>

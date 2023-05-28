@@ -12,6 +12,7 @@ const GachaGame = () => {
   const [pokemon, setPokemon] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
+  const [shake, setShake] = useState(false);
 
   const fetchRandomPokemon = async () => {
     try {
@@ -37,21 +38,26 @@ const GachaGame = () => {
   const handleButtonClick = () => {
     fetchRandomPokemon();
     setShowFront(true);
+    setShake(true);
+    setTimeout(() => {
+      setShake(false);
+    }, 500);
   };
   const [showFront, setShowFront] = useState(true);
   function flipCard(v) {
     setShowFront((v) => !v);
   }
 
+
   return (
     <div id="background" >
       <Navbar />
       <div className="container mx-auto p-4 mt-16 md:mt-28 flex flex-col items-center">
-        <div className='bg-slate-100/[.8] rounded-md p-4'>
-          <h1 className="text-2xl font-bold mb-2 text-center">Gacha Game</h1>
+        <div className='bg-slate-100/[.8] rounded-2xl mt-4 p-4'>
+          <h1 className="text-3xl font-bold mb-2 text-center">Gacha Game</h1>
           <button
             type="button"
-            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+            className="bg-blue-500 hover:bg-blue-700 text-md text-white font-bold py-4 px-9 rounded-3xl"
             onClick={handleButtonClick}
             disabled={loading}
           >
@@ -60,13 +66,13 @@ const GachaGame = () => {
         </div>
         {error && <p className="text-red-500">{error}</p>}
         {pokemon && (
-          <div className="flippable-card-container">
+          <div className={`flippable-card-container ${shake ? 'shake' : ''}`}>
             <CSSTransition
               in={showFront}
               timeout={300}
               classNames='flipeu'
             >
-              <div className="cardeu mt-4" onClick={flipCard}>
+              <div className="cardeu mt-12" onClick={flipCard}>
                 <div className="cardeu-back">
                   <div className="kartu">
                     <div className='karts capitalize '>
@@ -89,10 +95,9 @@ const GachaGame = () => {
                   </div>
                 </div>
                 <div className="cardeu-front">
-                  <img src={Pokecard} className='posisiFoto' alt='' />
+                  <img src={Pokecard} className="posisiFoto" alt="Poke-Card" />
                 </div>
               </div>
-
             </CSSTransition>
           </div>
         )}

@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import Navbar from '../Components/Navbar';
-import "../index.css"
-import bg from "../img/dungeon.webp"
+import "../index.css";
+import bg from "../img/dungeon.webp";
+import detective from "../img/detective.webp"
 
 const Search = () => {
     const [pokemonData, setPokemonData] = useState(null);
@@ -65,7 +66,7 @@ const Search = () => {
                         </div>
                     </div>
                     <div className='hidden lg:flex items-center'>
-                        <img className='h-40' src={bg} alt="" />
+                        <img className='h-40' src={detective} alt="" />
                     </div>
                 </div>
                 {showNoDataMessage && <p className="text-red-500">Oops.. No data found</p>}

@@ -12,7 +12,7 @@
 
 #card .gbrPoke {
   display: block;
-  width: 180px;
+  /* width: 250px; */
   max-height: 200px;
   position: relative;
   margin: 20px auto;
@@ -81,11 +81,6 @@
   border-radius: 5px;
 }
 
-.overlay {
-  position: relative;
-  align-items: center;
-  display: flex;
-}
 
 .ability {
   font-weight: bold;
@@ -94,15 +89,47 @@
 
 }
 
-.overlay img {
-  position: absolute;
-  /* top: 0; */
-  width: 300px;
-  /* left: 0; */
-  z-index: 1;
-  margin-left: 220px;
+.overlay {
+  position: relative;
+  align-items: center;
+  display: flex;
 }
 
-.overlay img:first-child {
-  z-index: 2;
+.circlet {
+  position: absolute;
+  width: 300px;
+  z-index: 20;
+  margin-left: 250px;
 }
+
+.gbrPoke {
+  position: absolute;
+  z-index: 20;
+  animation: anim 3s infinite;
+}
+
+.circlet:hover {
+  transform: scale(1.25) rotate(360deg);
+  transition: transform 0.5s;
+}
+
+.gbrPoke:hover {
+  transform: scale(1.25);
+  transition: transform 0.5s;
+}
+
+
+@keyframes anim {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
