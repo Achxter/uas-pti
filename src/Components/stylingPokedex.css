@@ -98,22 +98,32 @@
 .gbrPoke {
   position: absolute;
   z-index: 20;
+  animation: bobbing 3s infinite;
 }
 
-/* .gbrPoke:hover {
-  transform: scale(1.25);
-  transition: transform 0.5s;
-} */
+@keyframes bobbing {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
 
 .circlet {
   position: absolute;
   width: 300px;
   z-index: 20;
   margin-left: 250px;
-  animation: anim 2s infinite;
+  animation: spin 2s infinite;
 }
 
-@keyframes anim {
+@keyframes spin {
   0% {
     transform: rotate(0);
   }
