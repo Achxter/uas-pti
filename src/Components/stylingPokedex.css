@@ -95,41 +95,34 @@
   display: flex;
 }
 
+.gbrPoke {
+  position: absolute;
+  z-index: 20;
+}
+
+/* .gbrPoke:hover {
+  transform: scale(1.25);
+  transition: transform 0.5s;
+} */
+
 .circlet {
   position: absolute;
   width: 300px;
   z-index: 20;
   margin-left: 250px;
+  animation: anim 2s infinite;
 }
-
-.gbrPoke {
-  position: absolute;
-  z-index: 20;
-  animation: anim 3s infinite;
-}
-
-.circlet:hover {
-  transform: scale(1.25) rotate(360deg);
-  transition: transform 0.5s;
-}
-
-.gbrPoke:hover {
-  transform: scale(1.25);
-  transition: transform 0.5s;
-}
-
 
 @keyframes anim {
   0% {
-    transform: translateY(0);
+    transform: rotate(0);
   }
 
-  50% {
-    transform: translateY(-20px);
-  }
+  /* 50% {
+    transform: rotate(180deg);
+  } */
 
   100% {
-    transform: translateY(0);
+    transform: rotate(360deg);
   }
 }
-

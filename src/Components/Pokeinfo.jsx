@@ -14,8 +14,8 @@ const Pokeinfo = ({ data }) => {
                             {data.id}
                         </p>
                         <div className='overlay'>
-                            <img className="circlet w-20" src={bg} alt="circle"/>
-                            <img className="gbrPoke ease-in-out duration-200" src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${data.id}.png`} alt={data.name}/>
+                            <img className="circlet w-20" src={bg} alt="circle" />
+                            <img className="gbrPoke hover:scale-125 ease-in-out duration-700" src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${data.id}.png`} alt={data.name} />
                         </div>
                         <h2 className="poke-name capitalize">{data.name}</h2>
                         <div className="types">
@@ -40,31 +40,6 @@ const Pokeinfo = ({ data }) => {
                                 );
                             })}
                         </div>
-                        {/* <h1 className='uppercase font-bold text-center'>{data.name}</h1>
-                        <img className='w-15 m-auto' src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${data.id}.png`} alt="" />
-                        <div className="m-auto flex justify-around items-center mt-4 capitalize">
-                            {
-                                data.abilities.map(poke => {
-                                    return (
-                                        <>
-                                            <div className="bg-orange-400 text-white">
-                                                <h2>{poke.ability.name}</h2>
-                                            </div>
-                                        </>
-                                    )
-                                })
-                            }
-                        </div>
-                        <div className="base-stat text-center capitalize">
-                            {data.stats.map((poke, index) => {
-                                return (
-                                    <React.Fragment key={index}>
-                                        <h3>{poke.stat.name} : {poke.base_stat}</h3>
-                                    </React.Fragment>
-                                );
-                            })}
-                        </div> */}
-
                     </div>
                 )
             }
