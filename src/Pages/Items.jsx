@@ -49,7 +49,7 @@ const Item = () => {
     <div id="background" >
       <div className="container mx-auto p-4 mt-16 md:mt-32">
         <Navbar />
-        <div className='bg-white/[.06] shadow-2xl backdrop-blur rounded-md p-4 flex justify-around md:h-96'>
+        <div className='bg-white/[.06] backdrop-blur shadow-2xl rounded-md p-4 flex justify-around md:h-96'>
           <div className='flex items-center'>
             <div>
               <h1 className="text-4xl mb-4 font-bold text-white text-center md:text-left">Search All Items</h1>
@@ -77,13 +77,13 @@ const Item = () => {
           </div>
         </div>
         {loading &&
-          <div className='mt-4 flex justify-center items-center'>
+          <div className='mt-8 flex justify-center items-center'>
             <img id='pokeload' className='w-20 mr-2 rounded-full animate-spin' src={pokeball2} alt="" />
             <p className='textload text-4xl font-bold text-black text-center ml-2'>Loading...</p>
           </div>
         }
         {showNoDataMessage &&
-          <div className='mt-4'>
+          <div className='mt-12'>
             <div className='flex justify-center'>
               <p className='textload text-7xl font-bold'>4</p>
               <img id='pokebob' className='w-20 mx-2 rounded-full animate-bounce' src={pokeball2} alt="" />
@@ -95,12 +95,15 @@ const Item = () => {
         {itemData && (
           <div className="mt-4 md:grid md:gap-4 md:grid-cols-7 md:flex md:items-center text-white">
             <div className='md:col-span-3 h-full'>
-              <div className='h-full capitalize bg-black/[.6] backdrop-blur-sm p-4 rounded-md flex flex-col items-center justify-center'>
+              <div className='h-full capitalize bg-white/[.06] backdrop-blur p-4 rounded-md flex flex-col items-center justify-center'>
                 <h2 className="text-xl font-bold mb-2 capitalize">{itemData.name}</h2>
                 {itemData.sprites.default && (
-                  <img className="w-24 mb-2 bg-white/[.9] rounded-md active:scale-110 ease-in duration-300" src={itemData.sprites.default} alt={itemData.name} />
+                  <div className='gbrItem'>
+                    <img className=" w-24 mb-2 rounded-md active:scale-110  ease-in-out duration-700" src={itemData.sprites.default} alt={itemData.name} />
+
+                  </div>
                 )}
-                <p>
+                <p className='mb-2'>
                   <span className="font-bold">Category:</span> {itemData.category.name}
                 </p>
                 <p>
@@ -108,7 +111,7 @@ const Item = () => {
                 </p>
               </div>
             </div>
-            <div className='bg-black/[.8] backdrop-blur-sm h-full p-4 mt-4 md:mt-0 rounded-md md:col-span-4 flex items-center'>
+            <div className='bg-white/[.06] backdrop-blur h-full p-4 mt-4 md:mt-0 rounded-md md:col-span-4 flex text-center items-center'>
               {itemData.effect_entries[0] && (
                 <p>
                   {itemData.effect_entries[0].effect}

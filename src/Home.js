@@ -73,11 +73,11 @@ function Home() {
                 </div>
                 <div className='m-article-content'>
                   <h2 className="m-header text-base/7">Ready to explore ?</h2>
-                  <p className='m-paragraph text-center md:text-justify'>
+                  <p className='m-paragraph text-center md:text-justify mr-8'>
                   The Ascents&trade; website is a digital website created by the Ascent group which has a unique Pokemon concept in presenting complete information about Pokemon characters along with their strengths and abilities. This website pays great attention to website design to make it as attractive as possible to attract the attention of users, so as to provide a comfortable and responsive experience for every user. In addition, the website also provides games and activities related to the world of Pokemon, allowing users to test their knowledge, interact with their favorite characters, and play games such as Gacha Pokemon cards with unique characteristics. This website uses the Pokedex API to verify the accuracy and trustworthiness of the content from the website that is displayed. With maximum enthusiasm and effort in developing this website, the Ascent group hopes that this website will become a special place for every user as a Pokemon lover. Therefore, this website will become a bridge between users and Pokemon, and provide a memorable experience when playing and exploring Ascents&trade;.                  </p>
                 </div>
               <div className='copy'>
-                Ascents&trade;
+                <span>Ascents&trade;</span>
               </div>
             </article>
               <div className="overflow-hidden flex">
@@ -85,31 +85,31 @@ function Home() {
                   <div
                     id="skills"
                     ref={scroller}
-                    className="flex overflow-x-hidden text-white w-[400vw] m-0 bg-gray-900  relative h-screen"
+                    className="flex overflow-x-hidden text-black w-[400vw] m-0 bg-black  relative h-screen"
                   >
                     <section
                       ref={skills}
                       className="image1 skill-set px-12 w-screen h-full bg-transparent ns-horizontal-section__item flex items-center z-50"
                     >
-                      {/* <img src={one} alt="Example 1"/> */}
+                      {/* <img src={one} classname="untukhori" alt="Example 1"/> */}
                     </section>
                     <section
                       ref={skills}
                       className="image2 skill-set px-12 w-screen h-full bg-transparent ns-horizontal-section__item flex items-center z-50"
                     >
-                      {/* <img src={two} alt="Example 2"/> */}
+                      {/* <img src={two} classname="untukhori" alt="Example 2"/> */}
                     </section>
                     <section
                       ref={skills}
                       className="image3 skill-set px-12 w-screen h-full bg-transparent ns-horizontal-section__item flex items-center z-50"
                     >
-                      {/* <img src={three} alt="Example 3"/> */}
+                      {/* <img src={three} classname="untukhori " alt="Example 3"/> */}
                     </section>
                     <section
                       ref={skills}
                       className="image4 skill-set px-12 w-screen h-full bg-transparent ns-horizontal-section__item flex items-center z-50"
                     >
-                      {/* <img src={four} alt="Example 4"/> */}
+                      {/* <img src={four} classname="untukhori" alt="Example 4"/> */}
                     </section>
                   </div>
                   <div className="line">

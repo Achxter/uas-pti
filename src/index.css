@@ -591,3 +591,23 @@ body {
   /* margin-left: 250px; */
   animation: spin 2s infinite;
 }
+
+.gbrItem {
+  /* position: fixed; */
+  /* z-index: 20; */
+  animation: bobbing 3s infinite;
+}
+
+@keyframes bobbing {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-50px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
