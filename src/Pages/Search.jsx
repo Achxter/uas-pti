@@ -2,13 +2,13 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import Navbar from '../Components/Navbar';
 import "../index.css";
-import bg from "../img/dungeon.webp";
 import detective from "../img/detective.webp"
 
 const Search = () => {
     const [pokemonData, setPokemonData] = useState(null);
     const [pokemonInput, setPokemonInput] = useState('');
     const [showNoDataMessage, setShowNoDataMessage] = useState(false);
+    const [loading, setLoading] = useState(false);
 
     const handleInputChange = (event) => {
         setPokemonInput(event.target.value);
@@ -23,6 +23,9 @@ const Search = () => {
 
     const fetchPokemonData = async () => {
         try {
+            setPokemonData(null);
+            setShowNoDataMessage(false);
+            setLoading(true);
             const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemonInput}`);
             if (response.status === 200) {
                 setPokemonData(response.data);
@@ -35,6 +38,8 @@ const Search = () => {
             console.log(error);
             setPokemonData(null);
             setShowNoDataMessage(true);
+        } finally {
+            setLoading(false);
         }
     };
 
@@ -69,7 +74,8 @@ const Search = () => {
                         <img className='h-40' src={detective} alt="" />
                     </div>
                 </div>
-                {showNoDataMessage && <p className="text-red-500">Oops.. No data found</p>}
+                {loading && <p className='mt-8 text-4xl text-white text-center'>Loading...</p>}
+                {showNoDataMessage && <p className="mt-8 text-4xl text-white text-center">Oops.. No data found</p>}
                 {pokemonData && (
                     <div className="mt-4 capitalize rounded-md md:flex justify-around bg-black/[.6] backdrop-blur-sm">
                         <img

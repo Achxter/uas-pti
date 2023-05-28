@@ -21,7 +21,7 @@ const PokeAPI = () => {
     try {
       setLoading(true);
       setError('');
-
+      setPokemonList([]);
       const response = await axios.get(`https://pokeapi.co/api/v2/type/${selectedType}`);
       const updatedPokemonList = await Promise.all(
         response.data.pokemon.map(async (pokemon) => {
@@ -100,7 +100,7 @@ const PokeAPI = () => {
           </ul>
         </div>
         {loading && <p className='mt-8 text-4xl text-white text-center'>Loading...</p>}
-        {error && <p className="text-white text-2xl text-center">{error}</p>}
+        {error && <p className="mt-8 text-4xl text-white text-center">{error}</p>}
         {pokemonList.length > 0 && (
           <ul className="mt-5 sm:grid md:grid sm:grid-cols-3 lg:grid-cols-5 gap-4 px-18">
             {pokemonList.map((pokemon) => (

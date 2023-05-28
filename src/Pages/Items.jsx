@@ -8,6 +8,7 @@ const Item = () => {
   const [itemData, setItemData] = useState(null);
   const [itemInput, setItemInput] = useState('');
   const [showNoDataMessage, setShowNoDataMessage] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const handleInputChange = (event) => {
     setItemInput(event.target.value);
@@ -22,6 +23,9 @@ const Item = () => {
 
   const fetchItemData = async () => {
     try {
+      setShowNoDataMessage(false);
+      setItemData(null);
+      setLoading(true);
       const response = await axios.get(`https://pokeapi.co/api/v2/item/${itemInput}`);
       if (response.status === 200) {
         setItemData(response.data);
@@ -34,6 +38,8 @@ const Item = () => {
       console.log(error);
       setItemData(null);
       setShowNoDataMessage(true);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -69,7 +75,8 @@ const Item = () => {
             <img className='h-60' src={pokeball} alt="" />
           </div>
         </div>
-        {showNoDataMessage && <p className="text-red-500">Oops.. No data found</p>}
+        {loading && <p className='mt-8 text-4xl text-white text-center'>Loading...</p>}
+        {showNoDataMessage && <p className="mt-8 text-4xl text-white text-center">Oops.. No data found</p>}
         {itemData && (
           <div className="mt-4 md:grid md:gap-4 md:grid-cols-7 md:flex md:items-center text-white">
             <div className='md:col-span-3 h-full'>
