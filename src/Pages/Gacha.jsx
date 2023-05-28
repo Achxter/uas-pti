@@ -53,7 +53,7 @@ const GachaGame = () => {
     <div id="background" >
       <Navbar />
       <div className="container mx-auto p-4 mt-16 md:mt-28 flex flex-col items-center">
-        <div className='bg-slate-100/[.8] rounded-2xl mt-4 p-4'>
+        <div className='bg-slate-100/[.8] rounded-lg mt-4 p-4'>
           <h1 className="text-3xl font-bold mb-2 text-center">Gacha Game</h1>
           <button
             type="button"

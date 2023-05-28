@@ -85,8 +85,8 @@ const Abilities = () => {
                         <img className='gbrRame h-80' src={rame} alt="" />
                     </div>
                 </div>
-                {loading && <p className='mt-8 text-4xl text-white text-center'>Loading...</p>}
-                {error && <p className="mt-8 text-4xl text-white text-center">{error}</p>}
+                {loading && <p className='loadingPage mt-8 text-4xl text-white text-center'>Loading...</p>}
+                {error && <p className="errorPage mt-8 text-4xl text-white text-center">{error}</p>}
 
                 {abilityName && (
                     <div className="mt-4 bg-slate-100/[.8] p-4 rounded-md text-center">

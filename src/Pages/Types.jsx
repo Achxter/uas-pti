@@ -100,8 +100,8 @@ const PokeAPI = () => {
             ))}
           </ul>
         </div>
-        {loading && <p className='mt-8 text-4xl text-white text-center'>Loading...</p>}
-        {error && <p className="mt-8 text-4xl text-white text-center">{error}</p>}
+        {loading && <p className='loadingPage mt-8 text-4xl text-white text-center'>Loading...</p>}
+        {error && <p className="errorPage mt-8 text-4xl text-white text-center">{error}</p>}
         {pokemonList.length > 0 && (
           <ul className="mt-5 sm:grid md:grid sm:grid-cols-3 lg:grid-cols-5 gap-4">
             {pokemonList.map((pokemon) => (
