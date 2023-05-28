@@ -29,6 +29,7 @@ const PokeAPI = () => {
           return {
             name: pokemon.pokemon.name,
             spriteUrl: pokemonResponse.data.sprites.front_default,
+            id: pokemonResponse.data.id
           };
         })
       );
@@ -102,13 +103,13 @@ const PokeAPI = () => {
         {loading && <p className='mt-8 text-4xl text-white text-center'>Loading...</p>}
         {error && <p className="mt-8 text-4xl text-white text-center">{error}</p>}
         {pokemonList.length > 0 && (
-          <ul className="mt-5 sm:grid md:grid sm:grid-cols-3 lg:grid-cols-5 gap-4 px-18">
+          <ul className="mt-5 sm:grid md:grid sm:grid-cols-3 lg:grid-cols-5 gap-4">
             {pokemonList.map((pokemon) => (
-              <li className='flex bg-slate-100 rounded-xl mt-8 capitalize items-center py-4 px-8 mt-4' key={pokemon.name}>
+              <li className='flex bg-slate-100 rounded-xl mt-8 capitalize items-center mt-4' key={pokemon.name}>
                 {pokemon.spriteUrl && (
                   <img className="ml-2 h-25 " src={pokemon.spriteUrl} alt={pokemon.name} />
                 )}
-                <div className="px-3">
+                <div className="px-4">
                   <p className="text-xl mx-auto font-medium">{pokemon.name}</p>
                   <p className="text-md mx-auto">#00{pokemon.id}</p>
                 </div>

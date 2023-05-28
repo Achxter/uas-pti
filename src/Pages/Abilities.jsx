@@ -27,6 +27,7 @@ const Abilities = () => {
                     return {
                         name: pokemon.pokemon.name,
                         spriteUrl: pokemonResponse.data.sprites.front_default,
+                        id: pokemonResponse.data.id
                     };
                 })
             );
@@ -88,20 +89,23 @@ const Abilities = () => {
                 {error && <p className="mt-8 text-4xl text-white text-center">{error}</p>}
 
                 {abilityName && (
-                    <div className="mt-4 md:mx-8 bg-slate-100/[.8] p-4 rounded-md text-center">
+                    <div className="mt-4 bg-slate-100/[.8] p-4 rounded-md text-center">
                         <h2 className="text-xl font-bold mb-2 capitalize">{abilityName}</h2>
                         {abilityEffect}
                     </div>
                 )}
 
                 {pokemonList.length > 0 && (
-                    <ul className="mt-4 sm:grid md:grid sm:grid-cols-3 lg:grid-cols-5 gap-4 px-8">
+                    <ul className="mt-5 sm:grid md:grid sm:grid-cols-3 lg:grid-cols-5 gap-4">
                         {pokemonList.map((pokemon) => (
-                            <li className='flex bg-slate-100 rounded-md capitalize items-center mt-4' key={pokemon.name}>
+                            <li className='flex bg-slate-100 rounded-xl mt-8 capitalize items-center mt-4' key={pokemon.name}>
                                 {pokemon.spriteUrl && (
                                     <img className="ml-2 h-20" src={pokemon.spriteUrl} alt={pokemon.name} />
                                 )}
-                                <p className="text-lg mx-auto">{pokemon.name}</p>
+                                <div className="px-4">
+                                    <p className="text-xl mx-auto font-medium">{pokemon.name}</p>
+                                    <p className="text-md mx-auto">#00{pokemon.id}</p>
+                                </div>
                             </li>
                         ))}
                     </ul>
