@@ -102,13 +102,13 @@ const PokeAPI = () => {
           </ul>
         </div>
         {loading &&
-          <div className='mt-4 flex justify-center items-center'>
+          <div className='mt-12 flex justify-center items-center'>
             <img id='pokeload' className='w-20 mr-2 rounded-full animate-spin' src={pokeball2} alt="" />
             <p className='textload text-4xl font-bold text-black text-center ml-2'>Loading...</p>
           </div>
         }
         {error &&
-          <div className='mt-4'>
+          <div className='mt-12'>
             <div className='flex justify-center'>
               <p className='textload text-7xl font-bold'>4</p>
               <img id='pokebob' className='w-20 mx-2 rounded-full animate-bounce' src={pokeball2} alt="" />
@@ -118,7 +118,7 @@ const PokeAPI = () => {
           </div>
         }
         {pokemonList.length > 0 && (
-          <ul className="mt-5 sm:grid md:grid sm:grid-cols-3 lg:grid-cols-5 gap-4">
+          <ul className="mt-5 sm:grid sm:grid-cols-3 md:grid lg:grid-cols-4 xl:grid-cols-5 gap-4">
             {pokemonList.map((pokemon) => (
               <li className='flex bg-slate-100 rounded-xl mt-8 capitalize items-center mt-4' key={pokemon.name}>
                 {pokemon.spriteUrl && (

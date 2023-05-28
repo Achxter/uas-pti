@@ -21,7 +21,7 @@ function Home() {
   }, []);
   const scroller = useRef();
   const skills = useRef();
-
+  
   useEffect(() => {
     let skillSet = gsap.utils.toArray('.skill-set');
 
@@ -45,10 +45,11 @@ function Home() {
       to.kill();
     };
   }, []);
-
+  
   const handleSubmit = (event) => {
     event.preventDefault();
   };
+  
   return (
       <>
         <div className="wrapper">
@@ -84,31 +85,31 @@ function Home() {
                   <div
                     id="skills"
                     ref={scroller}
-                    className=" flex overflow-x-hidden text-white w-[400vw] m-0 bg-gray-900  relative h-screen"
+                    className="flex overflow-x-hidden text-white w-[400vw] m-0 bg-gray-900  relative h-screen"
                   >
                     <section
                       ref={skills}
-                      className="skill-set px-12 w-screen h-full bg-transparent ns-horizontal-section__item flex items-center z-50"
+                      className="image1 skill-set px-12 w-screen h-full bg-transparent ns-horizontal-section__item flex items-center z-50"
                     >
-                      <h1>Hello 1</h1>
+                      {/* <img src={one} alt="Example 1"/> */}
                     </section>
                     <section
                       ref={skills}
-                      className="skill-set px-12 w-screen h-full bg-transparent ns-horizontal-section__item flex items-center z-50"
+                      className="image2 skill-set px-12 w-screen h-full bg-transparent ns-horizontal-section__item flex items-center z-50"
                     >
-                      <h1>Hello 2</h1>
+                      {/* <img src={two} alt="Example 2"/> */}
                     </section>
                     <section
                       ref={skills}
-                      className="skill-set px-12 w-screen h-full bg-transparent ns-horizontal-section__item flex items-center z-50"
+                      className="image3 skill-set px-12 w-screen h-full bg-transparent ns-horizontal-section__item flex items-center z-50"
                     >
-                      <h1>Hello 3</h1>
+                      {/* <img src={three} alt="Example 3"/> */}
                     </section>
                     <section
                       ref={skills}
-                      className="skill-set px-12 w-screen h-full bg-transparent ns-horizontal-section__item flex items-center z-50"
+                      className="image4 skill-set px-12 w-screen h-full bg-transparent ns-horizontal-section__item flex items-center z-50"
                     >
-                      <h1>Hello 4</h1>
+                      {/* <img src={four} alt="Example 4"/> */}
                     </section>
                   </div>
                   <div className="line">

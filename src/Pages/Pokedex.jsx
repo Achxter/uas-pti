@@ -48,7 +48,7 @@ const Main = () => {
     <>
       <Navbar />
       <div id="background">
-        <div className="m-auto pt-20 flex mt-20 shadow-md">
+        <div className="m-auto pt-20 flex mt-10 shadow-md">
           <div className="flex basis-1/2 grid gap-8">
             <Card pokemon={pokeData} loading={loading} infoPokemon={poke => setPokeDex(poke)} />
           </div>
@@ -57,28 +57,37 @@ const Main = () => {
               <Pokeinfo data={pokeDex} />
             </div>
             {/* <div className="relative"> */}
-            <div className="btn-group absolute bottom-0 start-1/2 text-white flex justify-around">
+            {/* <div className="btn-group absolute bottom-0 start-1/2 text-white flex justify-around"> */}
+            <div className="btn-group text-white flex bottom-0 font-semibold">
               {prevUrl && (
                 <button
                   onClick={handlePrevClick}
-                  className="iniTombol mx-1 py-1.5 px-0 bg-orange-400 w-1/2 rounded-2xl"
+                  // className="iniTombol mx-1 py-1.5 px-0 bg-orange-400 w-1/2 rounded-2xl"
+                  className="Btnleft mr-4 p-auto"
                 >
-                  Previous
+                  <div class="sign">
+                    <span>&#8592;</span>
+                  </div>
+                  <div class="text">Previous</div>
                 </button>
               )}
               {nextUrl && (
                 <button
                   onClick={handleNextClick}
-                  className="iniTombol mx-1 py-1.5 px-0 bg-orange-400 w-1/2 rounded-2xl"
+                  // className="Btn mx-1 py-1.5 px-0 bg-orange-400 w-1/2 rounded-2xl"
+                  className="Btn ml-8"
                 >
-                  Next
+                  <div class="sign">
+                    <span>&#8594;</span>
+                  </div>
+                  <div class="text">Next</div>
                 </button>
               )}
             </div>
             {/* </div> */}
           </div>
         </div>
-      </div>
+      </div >
     </>
   );
 };
