@@ -48,22 +48,21 @@ const Main = () => {
     <>
       <Navbar />
       <div id="background">
-        <div className="m-auto pt-20 flex mt-10 shadow-md">
-          <div className="flex basis-1/2 grid gap-8">
-            <Card pokemon={pokeData} loading={loading} infoPokemon={poke => setPokeDex(poke)} />
-          </div>
+        <div className="md:flex mt-16 md:mt-20 shadow-md">
           <div className="">
-            <div className='fixed right-2 md:right-4 w-1/2'>
+            <div className='p-2 md:fixed md:right-4 md:w-1/2'>
               <Pokeinfo data={pokeDex} />
             </div>
-            {/* <div className="relative"> */}
-            {/* <div className="btn-group absolute bottom-0 start-1/2 text-white flex justify-around"> */}
-            <div className="btn-group text-white flex bottom-0 font-semibold">
+          </div>
+          <div className="md:w-1/2">
+            <div className='grid gap-8'>
+              <Card pokemon={pokeData} loading={loading} infoPokemon={poke => setPokeDex(poke)} />
+            </div>
+            <div className="text-white my-2 flex justify-around">
               {prevUrl && (
                 <button
                   onClick={handlePrevClick}
-                  // className="iniTombol mx-1 py-1.5 px-0 bg-orange-400 w-1/2 rounded-2xl"
-                  className="Btnleft mr-4 p-auto"
+                  className="Btnleft p-auto"
                 >
                   <div class="sign">
                     <span>&#8592;</span>
@@ -75,7 +74,7 @@ const Main = () => {
                 <button
                   onClick={handleNextClick}
                   // className="Btn mx-1 py-1.5 px-0 bg-orange-400 w-1/2 rounded-2xl"
-                  className="Btn ml-8"
+                  className="Btn"
                 >
                   <div class="sign">
                     <span>&#8594;</span>
@@ -84,7 +83,6 @@ const Main = () => {
                 </button>
               )}
             </div>
-            {/* </div> */}
           </div>
         </div>
       </div >
