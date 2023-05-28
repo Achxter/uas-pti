@@ -10,12 +10,6 @@ body {
   background-color: white;
 }
 
-/* code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-} */
-
-
 .left-content {
   grid-template-columns: repeat(autofit, minmax(200px, 0.5fr));
 }
@@ -172,16 +166,6 @@ body {
 .karts.animated {
   transition: none;
   animation: holoCard 12s ease 0s 1;
-
-  /* &:before {
-    transition: none;
-    animation: holoGradient 12s ease 0s 1;
-  }
-
-  &:after {
-    transition: none;
-    animation: holoSparkle 12s ease 0s 1;
-  } */
 }
 
 .karts.animated::before {
@@ -312,7 +296,6 @@ body {
 
   .kartu {
     align-items: center;
-    /* display: flex; */
     margin-left: 20px;
   }
 
@@ -322,10 +305,6 @@ body {
     background-color: #ffe163;
     border-radius: 15px;
     align-items: center;
-    /* display: flex; */
-    /* padding: auto; */
-    /* justify-content: center; */
-
   }
 
   .dataPokemon {
@@ -434,7 +413,7 @@ body {
   position: relative;
   height: 100px;
   width: 100px;
-  background: linear-gradient(to bottom, rgb(254, 0, 1) 50%, white 50% );
+  background: linear-gradient(to bottom, rgb(254, 0, 1) 50%, white 50%);
   border-radius: 50%;
   border: 8px solid black;
   animation: spin 1s linear infinite;
@@ -464,12 +443,24 @@ body {
 
 }
 
-/* Spin Animation */
-@keyframes spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.textload {
+  text-shadow:
+    0 0 7px #fff,
+    0 0 10px #fff,
+    0 0 21px #fff,
+    0 0 42px #fff;
+}
+
+#pokeload {
+  box-shadow:
+    0 0 7px #fff,
+    0 0 14px #fff,
+    0 0 21px #fff;
+}
+
+#pokebob {
+  box-shadow:
+    0 0 7px #fff,
+    0 0 14px #fff,
+    0 0 21px #fff;
 }

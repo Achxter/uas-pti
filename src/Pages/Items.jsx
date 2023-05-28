@@ -3,6 +3,7 @@ import axios from 'axios';
 import Navbar from '../Components/Navbar';
 import "../index.css";
 import pokeball from "../img/pokeball.webp";
+import pokeball2 from "../img/pokeball2.webp";
 
 const Item = () => {
   const [itemData, setItemData] = useState(null);
@@ -56,7 +57,7 @@ const Item = () => {
               <form className="relative" onSubmit={handleFormSubmit}>
                 <input
                   type="text"
-                  className="py-2 px-6 rounded-3xl w-full"
+                  className="py-2 px-6 rounded-3xl w-full focus:outline-none"
                   placeholder="Enter ID/Keyword"
                   value={itemInput}
                   onChange={handleInputChange}
@@ -75,8 +76,22 @@ const Item = () => {
             <img className='h-60' src={pokeball} alt="" />
           </div>
         </div>
-        {loading && <p className='mt-8 text-4xl text-white text-center'>Loading...</p>}
-        {showNoDataMessage && <p className="mt-8 text-4xl text-white text-center">Oops.. No data found</p>}
+        {loading &&
+          <div className='mt-4 flex justify-center items-center'>
+            <img id='pokeload' className='w-20 mr-2 rounded-full animate-spin' src={pokeball2} alt="" />
+            <p className='textload text-4xl font-bold text-black text-center ml-2'>Loading...</p>
+          </div>
+        }
+        {showNoDataMessage &&
+          <div className='mt-4'>
+            <div className='flex justify-center'>
+              <p className='textload text-7xl font-bold'>4</p>
+              <img id='pokebob' className='w-20 mx-2 rounded-full animate-bounce' src={pokeball2} alt="" />
+              <p className='textload text-7xl font-bold'>4</p>
+            </div>
+            <p className='textload text-4xl font-bold text-black text-center ml-2'>Error: data not found</p>
+          </div>
+        }
         {itemData && (
           <div className="mt-4 md:grid md:gap-4 md:grid-cols-7 md:flex md:items-center text-white">
             <div className='md:col-span-3 h-full'>

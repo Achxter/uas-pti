@@ -3,6 +3,7 @@ import axios from 'axios';
 import Navbar from '../Components/Navbar';
 import "../index.css";
 import tipe from "../img/element.webp";
+import pokeball2 from "../img/pokeball2.webp";
 
 const PokeAPI = () => {
   const [type, setType] = useState('');
@@ -68,7 +69,7 @@ const PokeAPI = () => {
               <form className='relative md:w-3/4' onSubmit={handleSubmit}>
                 <input
                   type="text"
-                  className="py-2 px-6 rounded-3xl w-full"
+                  className="py-2 px-6 rounded-3xl w-full focus:outline-none"
                   placeholder="Enter ID/Keyword"
                   value={type}
                   onChange={(event) => setType(event.target.value)}
@@ -100,8 +101,22 @@ const PokeAPI = () => {
             ))}
           </ul>
         </div>
-        {loading && <p className='loadingPage mt-8 text-4xl text-white text-center'>Loading...</p>}
-        {error && <p className="errorPage mt-8 text-4xl text-white text-center">{error}</p>}
+        {loading &&
+          <div className='mt-4 flex justify-center items-center'>
+            <img id='pokeload' className='w-20 mr-2 rounded-full animate-spin' src={pokeball2} alt="" />
+            <p className='textload text-4xl font-bold text-black text-center ml-2'>Loading...</p>
+          </div>
+        }
+        {error &&
+          <div className='mt-4'>
+            <div className='flex justify-center'>
+              <p className='textload text-7xl font-bold'>4</p>
+              <img id='pokebob' className='w-20 mx-2 rounded-full animate-bounce' src={pokeball2} alt="" />
+              <p className='textload text-7xl font-bold'>4</p>
+            </div>
+            <p className='textload text-4xl font-bold text-black text-center ml-2'>Error: data not found</p>
+          </div>
+        }
         {pokemonList.length > 0 && (
           <ul className="mt-5 sm:grid md:grid sm:grid-cols-3 lg:grid-cols-5 gap-4">
             {pokemonList.map((pokemon) => (

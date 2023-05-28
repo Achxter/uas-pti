@@ -7,6 +7,7 @@ import "../Pages/card/flip-transition.css";
 import { CSSTransition } from 'react-transition-group';
 import "../Pages/flippable-card.css";
 import Pokecard from "../img/pokemon_card_backside_in_high_resolution_by_atomicmonkeytcg_dah43cy-pre.webp";
+import pokeball2 from "../img/pokeball2.webp";
 
 const GachaGame = () => {
   const [pokemon, setPokemon] = useState(null);
@@ -57,14 +58,23 @@ const GachaGame = () => {
           <h1 className="text-3xl font-bold mb-2 text-center">Gacha Game</h1>
           <button
             type="button"
-            className="bg-blue-500 hover:bg-blue-700 text-md text-white font-bold py-4 px-9 rounded-3xl"
+            className="bg-blue-500 hover:bg-blue-700 text-md text-white font-bold py-2 px-4 rounded-3xl"
             onClick={handleButtonClick}
             disabled={loading}
           >
             {loading ? 'Fetching Pokémon...' : 'Click to Get a Pokémon'}
           </button>
         </div>
-        {error && <p className="text-red-500">{error}</p>}
+        {error &&
+          <div className='mt-4'>
+            <div className='flex justify-center'>
+              <p className='textload text-7xl font-bold'>4</p>
+              <img id='pokebob' className='w-20 mx-2 rounded-full animate-bounce' src={pokeball2} alt="" />
+              <p className='textload text-7xl font-bold'>4</p>
+            </div>
+            <p className='textload text-4xl font-bold text-black text-center ml-2'>Error: data not found</p>
+          </div>
+        }
         {pokemon && (
           <div className={`flippable-card-container ${shake ? 'shake' : ''}`}>
             <CSSTransition
@@ -103,44 +113,6 @@ const GachaGame = () => {
         )}
       </div >
     </div >
-    // <div id="background" >
-    //   <div className="container mx-auto p-4 mt-24">
-    //     <Navbar />
-    //     <div>
-    //       <h1 className="text-2xl font-bold mb-4">Gacha Game</h1>
-    //       <button
-    //         type="button"
-    //         className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-    //         onClick={handleButtonClick}
-    //         disabled={loading}
-    //       >
-    //         {loading ? 'Fetching Pokémon...' : 'Click to Get a Pokémon'}
-    //       </button>
-    //     </div>
-    //     {error && <p className="text-red-500">{error}</p>}
-    //     {pokemon && (
-    //       <div className="kartu mt-4">
-    //         <div className='karts capitalize '>
-    //           <div className="alas ">
-    //             <div className='info'>
-    //               <h4 className='namaKartu mt-1'>{pokemon.name}</h4>
-    //             </div>
-    //             <div className='gambarPokemon mt-1'>
-    //                 <img src={pokemon.sprites.front_default} alt={pokemon.name} className="w-40 h-40" />
-    //             </div>
-    //             <div className="dataPokemon mt-1">
-    //               {pokemon.stats.map((stat) => (
-    //                 <div className='grid mt-2' key={stat.stat.name}>
-    //                   <p><span className="font-bold">{stat.stat.name}</span>:&nbsp;{stat.base_stat}</p>
-    //                 </div>
-    //               ))}
-    //             </div>
-    //           </div>
-    //         </div>
-    //       </div>
-    //     )}
-    //   </div>
-    // </div>
   );
 };
 

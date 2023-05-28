@@ -5,12 +5,12 @@ import './style.css';
 
 const Navbar = () => {
   let Links = [
-    { link: "/Pokedex", name: "Pokedex" },
     { link: "/Abilities", name: "Abilities" },
+    { link: "/Gacha", name: "Gacha" },
     { link: "/Items", name: "Items" },
     { link: "/Types", name: "Types" },
-    { link: "/Search", name: "Search" },
-    { link: "/Gacha", name: "Gacha" }
+    { link: "/Pokedex", name: "Pokedex" },
+    { link: "/Search", name: "Search" }
   ];
 
   const [open, setOpen] = useState(false);
