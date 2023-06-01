@@ -466,148 +466,104 @@ body {
     0 0 21px #fff;
 }
 
-.sign {
-  width: 100%;
-  transition-duration: .3s;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* text */
-.text {
-  position: absolute;
-  right: 0%;
-  width: 0%;
-  opacity: 0;
+.svg-wrapper-1 {
+  font-family: inherit;
+  font-size: 20px;
+  background: #3677e1;
   color: white;
-  font-size: 1.2em;
-  font-weight: 600;
-  transition-duration: .3s;
-}
-
-.Btn {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  width: 45px;
-  height: 45px;
   border: none;
-  border-radius: 50%;
-  cursor: pointer;
-  position: relative;
+  border-radius: 16px;
   overflow: hidden;
-  transition-duration: .3s;
-  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.199);
-  background-color: #3677e1;
-  /* margin-right: 20%; */
+  transition: all 0.2s;
 }
 
-
-.Btn:hover {
-  width: 125px;
-  border-radius: 40px;
-  transition-duration: .3s;
+.svg-wrapper-1 span {
+  display: block;
+  margin-left: 0.3em;
+  transition: all 0.3s ease-in-out;
 }
 
-.Btn:hover .sign {
-  width: 30%;
-  transition-duration: .3s;
-  padding-left: 20px;
+.svg-wrapper-1 svg {
+  display: block;
+  transform-origin: center center;
+  transition: transform 0.3s ease-in-out;
 }
 
-.Btn,
-  .Btnleft {
-    flex-grow: 0;
+.svg-wrapper-1:hover .svg-wrapper {
+  animation: fly-1 0.6s ease-in-out infinite alternate;
+}
+
+.svg-wrapper-1:hover svg {
+  transform: translateX(1.2em) rotate(45deg) scale(1.1);
+}
+
+.svg-wrapper-1:hover span {
+  transform: translateX(5em);
+}
+
+.svg-wrapper-1:active {
+  transform: scale(0.95);
+}
+
+@keyframes fly-1 {
+  from {
+    transform: translateY(0.1em);
   }
 
-.Btn:hover .text {
-  opacity: 1;
-  width: 70%;
-  transition-duration: .3s;
-  padding-right: 10px;
+  to {
+    transform: translateY(-0.1em);
+  }
 }
 
-.Btn:active {
-  transform: translate(2px, 2px);
-}
-
-.btn-group {
-  display: flex;
-  justify-content: flex-start;
-  position: relative;
-  align-items: flex-end;
-  top: 110%;
-  gap: 10%;
-}
-
-.Btnleft {
+.svg-wrapper-2 {
+  font-family: inherit;
+  font-size: 20px;
+  background: #3677e1;
+  color: white;
   display: flex;
   align-items: center;
-  /* justify-content: flex-start; */
-  width: 45px;
-  height: 45px;
   border: none;
-  border-radius: 50%;
-  cursor: pointer;
-  /* position: absolute;  */
+  border-radius: 16px;
   overflow: hidden;
-  transition-duration: .3s;
-  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.199);
-  background-color: #3677e1;
-  /* margin-right: 40%; */
+  transition: all 0.2s;
 }
 
-.Btnleft:hover {
-  width: 140px;
-  transform: translateX(-60px);
-  border-radius: 40px;
-  transition-duration: .3s;
+.svg-wrapper-2 span {
+  display: block;
+  margin-right: 0.3em;
+  transition: all 0.3s ease-in-out;
 }
 
-.Btnleft:hover .sign {
-  width: 30%;
-  transition-duration: .3s;
-  padding-left: 0;
-  transform: translateX(95px);
+.svg-wrapper-2 svg {
+  display: block;
+  transform-origin: center center;
+  transition: transform 0.3s ease-in-out;
 }
 
-.Btnleft:hover .text {
-  opacity: 1;
-  width: 70%;
-  transition-duration: .3s;
-  padding-right: 40px;
-  transform: translateX(-30px);
+.svg-wrapper-2:hover .svg-wrapper {
+  animation: fly-2 0.6s ease-in-out infinite alternate;
 }
 
-.Btnleft:active {
-  transform: translate(2px, 2px);
+.svg-wrapper-2:hover svg {
+  transform: translateX(-1.2em) rotate(-45deg) scale(1.1);
 }
 
-.circletet{
-  position: absolute;
-  width: 300px;
-  z-index: 20;
-  /* margin-left: 250px; */
-  animation: spin 2s infinite;
+.svg-wrapper-2:hover span {
+  transform: translateX(-5em);
 }
 
-.gbrItem {
-  /* position: fixed; */
-  /* z-index: 20; */
-  animation: bobbing 3s infinite;
+.svg-wrapper-2:active {
+  transform: scale(0.95);
 }
 
-@keyframes bobbing {
-  0% {
-    transform: translateY(0);
+@keyframes fly-2 {
+  from {
+    transform: translateY(-0.1em);
   }
 
-  50% {
-    transform: translateY(-50px);
-  }
-
-  100% {
-    transform: translateY(0);
+  to {
+    transform: translateY(0.1em);
   }
 }

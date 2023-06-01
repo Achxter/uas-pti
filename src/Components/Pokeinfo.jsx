@@ -8,34 +8,33 @@ const Pokeinfo = ({ data }) => {
     <>
       {
         (!data) ? "" : (
-          <div id="card" className='p-4 rounded-md'>
-            <p className="hp">
-              <span>ID: #00</span>
-              {data.id}
-            </p>
-            <div className='overlay'>
-              <img className="circlet sm:w-80 sm:ml-40 md:ml-4 lg:ml-16 xl:ml-44" src={bg} alt="circle" />
-              <img className="gbrPoke ease-in-out duration-700 m-4 mx-auto" src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${data.id}.png`} alt={data.name} />
+          <div id="pokeCard" className='m-4 p-4 !border-0 bg-white rounded-md'>
+            <div className='relative'>
+              <img className="absolute w-3/4 md:w-1/2 mx-auto" id='circlet' src={bg} alt="" />
+              <img className="w-1/2 md:w-1/3 lg:mt-2 xl:mt-4 absolute mx-auto" id="gbrPoke" src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${data.id}.png`} alt={data.name} />
             </div>
-            <h2 className="text-2xl mt-4 md:mt-12 text-center font-extrabold capitalize">{data.name}</h2>
-            <div className="flex justify-around m-4">
+            <div className="flex">
+              <p className='abilities px-3 py-1 text-white rounded-3xl'>ID: #00{data.id}</p>
+            </div>
+            <h2 className="text-2xl mt-48 md:mt-28 lg:mt-44 xl:mt-64 text-center font-extrabold capitalize">{data.name}</h2>
+            <div className="flex justify-around m-2">
               {
                 data.abilities.map(poke => {
                   return (
                     <>
-                      <div className="ability px-4 py-2 text-bold text-white capitalize">
-                        <h2 className='capitalize'>{poke.ability.name}</h2>
+                      <div className="abilities capitalize px-3 py-1 rounded-3xl">
+                        <h1 className='text-xl text-white capitalize'>{poke.ability.name}</h1>
                       </div>
                     </>
                   )
                 })
               }
             </div>
-            <div className="!grid grid-cols-2 h-1/2 gap-x-2">
+            <div className="!grid grid-cols-2 gap-2">
               {data.stats.map((poke) => {
                 return (
                   // <React.Fragment key={index}>
-                    <h3 className='capitalize'><span className='capital text-bold'>{poke.stat.name}</span>: <span>{poke.base_stat}</span></h3>
+                  <p className='capitalize text-center'><span className='font-bold'>{poke.stat.name}</span>: <span>{poke.base_stat}</span></p>
                   // </React.Fragment>
                 );
               })}
