@@ -10,8 +10,8 @@ const Pokeinfo = ({ data }) => {
         (!data) ? "" : (
           <div id="pokeCard" className='m-4 p-4 !border-0 bg-white rounded-md'>
             <div className='relative'>
-              <img className="absolute w-3/4 md:w-1/2 mx-auto" id='circlet' src={bg} alt="" />
-              <img className="w-1/2 md:w-1/3 lg:mt-2 xl:mt-4 absolute mx-auto" id="gbrPoke" src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${data.id}.png`} alt={data.name} />
+              <img className="absolute w-60 md:w-80 mx-auto" id='circlet' src={bg} alt="" />
+              <img className="w-48 md:w-60 lg:mt-2 xl:mt-4 absolute mx-auto" id="gbrPoke" src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${data.id}.png`} alt={data.name} />
             </div>
             <div className="flex">
               <p className='abilities px-3 py-1 text-white rounded-3xl'>ID: #00{data.id}</p>

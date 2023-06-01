@@ -703,28 +703,28 @@ body {
 }
 
 .image1 {
-  background-image: url("./img/one.webp");
+  background-image: url("./img/s1.webp");
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
 }
 
 .image2 {
-  background-image: url("./img/two.webp");
+  background-image: url("./img/s2.webp");
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
 
 .image3 {
-  background-image: url("./img/three.webp");
+  background-image: url("./img/s3.webp");
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
 }
 
 .image4 {
-  background-image: url("./img/four.webp");
+  background-image: url("./img/s4.webp");
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
