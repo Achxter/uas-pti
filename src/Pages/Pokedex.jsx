@@ -57,7 +57,7 @@ const Main = () => {
             <div className='grid gap-4 mt-4'>
               <Card pokemon={pokeData} loading={loading} infoPokemon={poke => setPokeDex(poke)} />
             </div>
-            <div className="text-white my-2 grid grid-cols-2 gap-8">
+            <div className="text-white my-2 flex items-center justify-center md:grid grid-cols-2 gap-8">
               {prevUrl && (
                 <button onClick={handlePrevClick}>
                   <div class="svg-wrapper-2 px-4 py-2">
