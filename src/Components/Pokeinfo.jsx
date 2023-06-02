@@ -16,7 +16,7 @@ const Pokeinfo = ({ data }) => {
             <div className="flex">
               <p className='abilities px-3 py-1 text-white rounded-3xl'>ID: #00{data.id}</p>
             </div>
-            <h2 className="text-2xl mt-48 xl:mt-72 text-center font-extrabold capitalize">{data.name}</h2>
+            <h2 className="text-2xl mt-48 xl:mt-80 text-center font-extrabold capitalize">{data.name}</h2>
             <div className="flex justify-around m-2">
               {
                 data.abilities.map(poke => {

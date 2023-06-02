@@ -94,7 +94,7 @@ const Search = () => {
         }
         {pokemonData && (
           <div className="mt-4 p-4 pt-0 md:pt-4 capitalize w-full rounded-md grid !items-start !max-w-none gap-4 bg-white/[.06] backdrop-blur text-white">
-            <div className='relative col-span-1'>
+            <div className='relative col-span-1 lg:mr-40 '>
               <img id='circlet' className="absolute w-1/2 mx-auto" src={putih} alt="" />
               <img
                 id='gbrPoke'
