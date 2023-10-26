@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import Navbar from '../Components/Navbar';
 import "../index.css"
+import "../Pages/Gacha.css"
 import "../Pages/card/card.css";
 import "../Pages/card/flip-transition.css";
 import { CSSTransition } from 'react-transition-group';
